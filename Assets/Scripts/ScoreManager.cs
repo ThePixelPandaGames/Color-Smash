@@ -7,10 +7,13 @@ public class ScoreManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
 
+    int score;
+
 
     void Start()
     {
-        
+        score = 0;
+        UpdateScoreUI();
     }
 
     void Update()
@@ -18,5 +21,14 @@ public class ScoreManager : MonoBehaviour
         
     }
 
-    
+    public void IncreaseScoreByOne()
+    {
+        score++;
+        UpdateScoreUI();
+    }
+
+    private void UpdateScoreUI()
+    {
+        scoreText.text = "Score: " + score;
+    }
 }

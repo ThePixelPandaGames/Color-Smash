@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     private EnemySpawnManager enemySpawnManager;
+    private ScoreManager scoreManager;
 
     [SerializeField] private float levelUpIntervall = 10;
 
@@ -26,13 +27,10 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
 
-        GameObject enemySpawnManager_go = GameObject.Find("Enemy Spawn Manager");
+        enemySpawnManager = GetComponent<EnemySpawnManager>();  
+        scoreManager = GetComponent<ScoreManager>();
 
-        if (enemySpawnManager != null ) {
-            throw new System.Exception("Enemy Spawn Manager not found");
-        }
 
-        enemySpawnManager = enemySpawnManager_go.GetComponent<EnemySpawnManager>();
 
         InvokeRepeating(nameof(LevelUp), startIntervallGap, levelUpIntervall);
 
@@ -45,6 +43,7 @@ public class GameManager : MonoBehaviour
     public void LevelUp()
     {
         Debug.Log("Level up");
+
         enemySpawnManager.CancelInvoke();
 
         enemySpawnManager.spawnIntervall /= spawnIntervallDivider;
@@ -52,6 +51,11 @@ public class GameManager : MonoBehaviour
         enemyMoveSpeed *= enemyMoveSpeedMultiplier;
 
         enemySpawnManager.StartSpawn(enemySpawnManager.spawnIntervall, enemyMoveSpeed);
+    }
+
+    public void IncreaseScoreByOne ()
+    {
+        scoreManager.IncreaseScoreByOne();
     }
 
 

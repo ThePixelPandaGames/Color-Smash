@@ -2,7 +2,14 @@ using UnityEngine;
 
 public class Collision : MonoBehaviour
 {
-   
+
+    GameManager gameManager;
+
+    private void Start()
+    {
+        gameManager = GameManager.Instance;
+    }
+
     private bool CompareColor(Color me, Color other)
     {
         return me.r == other.r && me.g == other.g && me.b == other.b && me.a == other.a;
@@ -31,6 +38,7 @@ public class Collision : MonoBehaviour
     private void Score(GameObject toDestroy)
     {
         // calla score method in game Manager to handle UI, maybe a UI handler or so
+        gameManager.IncreaseScoreByOne();
         Destroy(toDestroy);
     }
 
