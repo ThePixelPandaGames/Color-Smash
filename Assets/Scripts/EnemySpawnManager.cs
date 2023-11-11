@@ -2,34 +2,27 @@ using UnityEngine;
 
 public class EnemySpawnManager : MonoBehaviour
 {
-    public EnemySpawnManager Instance;
-
     [SerializeField]
     GameObject EnemyPrefab;
 
-    public float spawnIntervall = 1;
-    float startSpawn = 1;
+    [HideInInspector] public float spawnIntervall;
 
     [SerializeField] float xLimit, yLimit;
 
 
-    void Start()
-    {
-        if (Instance == null) Instance = this;
+    private float enemySpeed;
 
-        InvokeRepeating(nameof(SpawnEnemyPrefab), startSpawn, spawnIntervall);
-    }
 
-    void Update()
-    {
-        // not needed until now 
-    }
+
+
 
 
     void SpawnEnemyPrefab()
     {
         Vector2 randomSpawnPosition = GetRandomPosition(xLimit, yLimit);
-        Instantiate(EnemyPrefab, randomSpawnPosition, Quaternion.identity);
+        GameObject enemy_go = Instantiate(EnemyPrefab, randomSpawnPosition, Quaternion.identity);
+        EnemyMovement enemyMovement = enemy_go.GetComponent<EnemyMovement>();
+        enemyMovement.moveSpeed *= enemySpeed;
     }
 
 
@@ -55,6 +48,19 @@ public class EnemySpawnManager : MonoBehaviour
             default: return new Vector2(-xLimit, Random.Range(-yLimit, yLimit));
 
         }
+    }
+
+
+
+    public void StartSpawn(float newIntervall, float newEnemySpeed)
+    {
+        spawnIntervall = newIntervall;
+        enemySpeed = newEnemySpeed;
+        Debug.Log("new enemy speed: " + newEnemySpeed);
+        Debug.Log("new spawn intervall: " + newIntervall);
+
+
+        InvokeRepeating(nameof(SpawnEnemyPrefab), 1f, spawnIntervall);
     }
 
 }

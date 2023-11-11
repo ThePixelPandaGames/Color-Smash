@@ -54,16 +54,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotSpeed: 20
-  minSwipeDistance: 10
+  minSwipeDistance: 5
   Colors:
   - {r: 0.41509432, g: 0.17426129, b: 0.17426129, a: 1}
-  - {r: 0.41509432, g: 0.17426129, b: 0.17426129, a: 1}
-  - {r: 0.41509432, g: 0.17426129, b: 0.17426129, a: 1}
-  - {r: 0.41509432, g: 0.17426129, b: 0.17426129, a: 1}
-  - {r: 0.41509432, g: 0.17426129, b: 0.17426129, a: 1}
-  - {r: 0.41509432, g: 0.17426129, b: 0.17426129, a: 1}
-  - {r: 0.41509432, g: 0.17426129, b: 0.17426129, a: 1}
-  - {r: 0.41509432, g: 0.17426129, b: 0.17426129, a: 1}
+  - {r: 0.8113208, g: 0.5588822, b: 0.2028302, a: 1}
+  - {r: 0.22294413, g: 0.25363928, b: 0.2830189, a: 1}
+  - {r: 0.033018887, g: 0.9262847, b: 1, a: 1}
+  - {r: 0.07155571, g: 0.2264151, b: 0.10969961, a: 1}
+  - {r: 0.5826482, g: 0.8207547, b: 0.21293166, a: 1}
+  - {r: 0.5484603, g: 0.8018868, b: 0.55547494, a: 1}
+  - {r: 1, g: 0.20881328, b: 0, a: 1}
 --- !u!1 &2436445636650880640
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,6 +196,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4277887386438061576, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5177937168816903726, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_Name
       value: Wheel Bubble (7)
@@ -256,6 +260,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277887386438061576, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5177937168816903726, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
@@ -320,6 +328,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4277887386438061576, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5177937168816903726, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_Name
       value: Wheel Bubble (5)
@@ -380,6 +392,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277887386438061576, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5177937168816903726, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
@@ -444,6 +460,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4277887386438061576, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5177937168816903726, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_Name
       value: Wheel Bubble (6)
@@ -504,6 +524,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277887386438061576, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5177937168816903726, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
@@ -568,6 +592,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4277887386438061576, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5177937168816903726, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_Name
       value: Wheel Bubble (1)
@@ -628,6 +656,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277887386438061576, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5177937168816903726, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
