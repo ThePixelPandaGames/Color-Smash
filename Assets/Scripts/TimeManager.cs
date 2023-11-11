@@ -6,7 +6,7 @@ using UnityEngine;
 public class TimeManager : MonoBehaviour
 {
     int secondsPast;
-    bool timeIsTicking;
+    public bool timeIsTicking;
     public TextMeshProUGUI timerUI;
     [HideInInspector] public float secondsToWait;
 

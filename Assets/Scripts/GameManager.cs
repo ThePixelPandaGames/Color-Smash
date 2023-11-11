@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private TimeManager timeManager;
     private SpecialEffectFactory specialEffectFactory;
     private ColorWheel colorWheel;
+    private GameOverLogic gameOverLogic;
     private float effectFade = 5;
 
     [SerializeField] private float levelUpIntervall = 10;
@@ -31,8 +32,10 @@ public class GameManager : MonoBehaviour
 
     public SpriteRenderer effectRenderer;
 
-    public bool isRainbowEffectActivated = false;
+    [HideInInspector] public bool isRainbowEffectActivated = false;
 
+
+    [HideInInspector] public bool isGameOver = false;
     
 
 
@@ -43,10 +46,15 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
 
+        // maybe necessary?
+        Time.timeScale = 1;
+
+
         enemySpawnManager = GetComponent<EnemySpawnManager>();
         scoreManager = GetComponent<ScoreManager>();
         timeManager = GetComponent<TimeManager>();
         specialEffectFactory = GetComponent<SpecialEffectFactory>();
+        gameOverLogic = GetComponent<GameOverLogic>();  
         colorWheel = GameObject.Find("Color Wheel").GetComponent<ColorWheel>(); 
 
 
@@ -58,6 +66,26 @@ public class GameManager : MonoBehaviour
 
         enemySpawnManager.StartSpawn(startIntervall, enemyMoveSpeed);
 
+    }
+
+    private void Update()
+    {
+        if (isGameOver)
+        {
+            OnGameOver();
+        }
+    }
+
+    private void OnGameOver()
+    {
+        Debug.Log("game Over");
+        CancelInvoke();
+        StopAllCoroutines();
+        timeManager.timeIsTicking = false;
+        Time.timeScale = 0;
+
+        // display game over UI
+        gameOverLogic.ShowGameOverUI();
     }
 
     public void CreateNewSpecialEffect()
