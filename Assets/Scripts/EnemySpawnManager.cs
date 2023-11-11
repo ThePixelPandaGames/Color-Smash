@@ -10,19 +10,16 @@ public class EnemySpawnManager : MonoBehaviour
     [SerializeField] float xLimit, yLimit;
 
 
-    private float enemySpeed;
+    [SerializeField] private float enemySpeed;
 
-
-
-
-
+    public float EnemySpeed { get => enemySpeed; set => enemySpeed = value; }
 
     void SpawnEnemyPrefab()
     {
         Vector2 randomSpawnPosition = GetRandomPosition(xLimit, yLimit);
         GameObject enemy_go = Instantiate(EnemyPrefab, randomSpawnPosition, Quaternion.identity);
         EnemyMovement enemyMovement = enemy_go.GetComponent<EnemyMovement>();
-        enemyMovement.moveSpeed *= enemySpeed;
+        enemyMovement.moveSpeed *= EnemySpeed;
     }
 
 
@@ -55,7 +52,7 @@ public class EnemySpawnManager : MonoBehaviour
     public void StartSpawn(float newIntervall, float newEnemySpeed)
     {
         spawnIntervall = newIntervall;
-        enemySpeed = newEnemySpeed;
+        EnemySpeed = newEnemySpeed;
         Debug.Log("new enemy speed: " + newEnemySpeed);
         Debug.Log("new spawn intervall: " + newIntervall);
 
