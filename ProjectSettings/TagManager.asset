@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wheel Bubble
+  - Enemy
+  - Wheel Center
   layers:
   - Default
   - TransparentFX
