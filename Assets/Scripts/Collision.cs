@@ -45,5 +45,7 @@ public class Collision : MonoBehaviour
     {
         // call game over in Game Manager or so
         //Debug.Log("Game Over");
+
+        GameManager.Instance.isGameOver = true;
     }
 }
