@@ -10,11 +10,6 @@ public class DetectDoubleClick : MonoBehaviour
     private float lastClickTime = 0f;
 
 
-    private void Start()
-    {
-        
-    }
-
 
     void Update()
     {

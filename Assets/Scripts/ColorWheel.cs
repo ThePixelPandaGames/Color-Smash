@@ -7,6 +7,8 @@ public class ColorWheel : MonoBehaviour
 
     [SerializeField] float minSwipeDistance = 20f;
 
+    public GameObject[] wheelBubbles;
+
 
     // should maybe be part of Game manager
     [SerializeField] Color[] Colors;
@@ -46,9 +48,12 @@ public class ColorWheel : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotSpeed * Time.deltaTime);
     }
 
-    void InitializeColorsOnWheels()
+    public void InitializeColorsOnWheels()
     {
-        GameObject[] wheelBubbles = GameObject.FindGameObjectsWithTag("Wheel Bubble");
+        if (wheelBubbles.Length == 0)
+        {
+            wheelBubbles = GameObject.FindGameObjectsWithTag("Wheel Bubble");
+        }
 
         if(wheelBubbles.Length != Colors.Length)
         {

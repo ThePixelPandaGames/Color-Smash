@@ -3,11 +3,10 @@ using UnityEngine;
 public class Collision : MonoBehaviour
 {
 
-    GameManager gameManager;
+
 
     private void Start()
     {
-        gameManager = GameManager.Instance;
     }
 
     private bool CompareColor(Color me, Color other)
@@ -26,7 +25,7 @@ public class Collision : MonoBehaviour
             Color thisColor = GetComponent<SpriteRenderer>().color;
 
             
-            if(CompareColor(thisColor, enemyColor)) {
+            if(CompareColor(thisColor, enemyColor) || GameManager.Instance.isRainbowEffectActivated) {
                 Score(enemy);
             } else
             {
@@ -38,7 +37,7 @@ public class Collision : MonoBehaviour
     private void Score(GameObject toDestroy)
     {
         // calla score method in game Manager to handle UI, maybe a UI handler or so
-        gameManager.IncreaseScoreByOne();
+        GameManager.Instance.IncreaseScoreByOne();
         Destroy(toDestroy);
     }
 
