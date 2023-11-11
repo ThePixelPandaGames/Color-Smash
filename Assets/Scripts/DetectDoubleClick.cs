@@ -33,7 +33,7 @@ public class DetectDoubleClick : MonoBehaviour
                     //Debug.Log("Double Click!");
 
 
-                    if (GameManager.Instance.availableSpecialEffect != null)
+                    if (GameManager.Instance.availableSpecialEffect != null && !GameManager.Instance.isPaused)
                     {
                         GameManager.Instance.availableSpecialEffect.ActivateSpecialEffect(GameManager.Instance);
                     }

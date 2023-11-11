@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public bool duringEffect = false;
 
 
+    [HideInInspector] public bool isPaused = false;
+
     [HideInInspector] public SpecialEffect availableSpecialEffect;
 
     public SpriteRenderer effectRenderer;

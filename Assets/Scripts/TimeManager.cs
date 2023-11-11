@@ -18,10 +18,15 @@ public class TimeManager : MonoBehaviour
         StartCoroutine(StartTimer());
     }
 
+    public void ResumeTimer()
+    {
+        StartCoroutine(StartTimer());
+    }
+
 
     IEnumerator StartTimer ()
     {
-        while (timeIsTicking)
+        while (timeIsTicking && !GameManager.Instance.isPaused)
         {
             secondsPast++;
             UpdateTimerUI();
