@@ -129,6 +129,28 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void ActivateDestroy()
+    {
+        DisableEffectPossibility();
+
+        // do someting
+        Collider2D[] collided = Physics2D.OverlapCircleAll(Vector2.zero, 3);
+
+        // start a particle system 
+
+        foreach(Collider2D col in collided)
+        {
+            if (col.gameObject.CompareTag("Enemy"))
+            {
+                Destroy(col.gameObject);
+            }
+        }
+
+
+        isEffectSlotFree = true;
+        duringEffect = false;
+    }
+
     private void DisableEffectPossibility()
     {
         duringEffect = true;
@@ -151,6 +173,8 @@ public class GameManager : MonoBehaviour
         duringEffect = false;
 
     }
+
+   
 
     IEnumerator HalfEnemySpeedCo(int cooldown)
     {

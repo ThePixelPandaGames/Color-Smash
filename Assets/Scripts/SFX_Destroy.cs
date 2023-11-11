@@ -8,7 +8,7 @@ public class SFX_Destroy: SpecialEffect
         cooldown = COOLDOWN_SECONDS;
 
         // slow down clock timer -> time manager
-       // gameManager.ActivateRainbow(cooldown);
+       gameManager.ActivateDestroy();
       
     }
 
