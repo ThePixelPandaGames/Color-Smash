@@ -8,11 +8,13 @@ public class TimeManager : MonoBehaviour
     int secondsPast;
     bool timeIsTicking;
     public TextMeshProUGUI timerUI;
+    [HideInInspector] public float secondsToWait;
 
     void Start()
     {
         secondsPast = 0;
         timeIsTicking = true;
+        secondsToWait = 1f;
         StartCoroutine(StartTimer());
     }
 
@@ -23,7 +25,7 @@ public class TimeManager : MonoBehaviour
         {
             secondsPast++;
             UpdateTimerUI();
-            yield return new WaitForSecondsRealtime(1);
+            yield return new WaitForSecondsRealtime(secondsToWait); ;
         }
     }
 
