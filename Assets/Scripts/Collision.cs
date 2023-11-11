@@ -37,6 +37,6 @@ public class Collision : MonoBehaviour
     private void GameOver()
     {
         // call game over in Game Manager or so
-        Debug.Log("Game Over");
+        //Debug.Log("Game Over");
     }
 }

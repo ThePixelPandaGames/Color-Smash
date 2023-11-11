@@ -3,9 +3,10 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     private Transform wheelCenter;
-    [SerializeField] float moveSpeed;
+    [HideInInspector] public float moveSpeed;
     Vector2 normDirectionVector;
-    public float xDestroy, yDestroy;
+    [SerializeField] float xDestroy, yDestroy;
+
 
 
     void Start()
