@@ -11,6 +11,12 @@ public class ColorWheel : MonoBehaviour
     // should maybe be part of Game manager
     [SerializeField] Color[] Colors;
 
+    public Color GetRandomColorFromWheel()
+    {
+        return Colors[Random.Range(0, Colors.Length - 1)];    
+    }
+
+  
 
 
     void Start()
