@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting.Dependencies.Sqlite;
-using UnityEditor;
 using UnityEngine;
 
 public class ColorWheel : MonoBehaviour
@@ -12,10 +8,14 @@ public class ColorWheel : MonoBehaviour
     [SerializeField] float minSwipeDistance = 20f;
 
 
+    // should maybe be part of Game manager
+    [SerializeField] Color[] hexCodeColors;
+
 
 
     void Start()
     {
+        InitializeColorsOnWheels();
     }
 
     void Update()
@@ -38,6 +38,22 @@ public class ColorWheel : MonoBehaviour
         // Rotate the wheel around the Z-axis
         Quaternion targetRotation = Quaternion.Euler(0, 0, transform.eulerAngles.z + rotateAmount);
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotSpeed * Time.deltaTime);
+    }
+
+    void InitializeColorsOnWheels()
+    {
+        GameObject[] wheelBubbles = GameObject.FindGameObjectsWithTag("Wheel Bubble");
+
+        if(wheelBubbles.Length != hexCodeColors.Length)
+        {
+            throw new System.Exception("You need to have the same amount of colors and wheel bubbles");
+        }
+
+        for(int i = 0; i < hexCodeColors.Length; i++) {
+
+            wheelBubbles[i].GetComponent<SpriteRenderer>().color = hexCodeColors[i];
+        }
+       
     }
 }
 
