@@ -2,24 +2,11 @@ using UnityEngine;
 
 public class Collision : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+   
     private bool CompareColor(Color me, Color other)
     {
         return me.r == other.r && me.g == other.g && me.b == other.b && me.a == other.a;
     }
-
-
 
 
     private void OnTriggerEnter2D(Collider2D collision)
