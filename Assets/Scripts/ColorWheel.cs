@@ -9,7 +9,7 @@ public class ColorWheel : MonoBehaviour
 
 
     // should maybe be part of Game manager
-    [SerializeField] Color[] hexCodeColors;
+    [SerializeField] Color[] Colors;
 
 
 
@@ -44,14 +44,14 @@ public class ColorWheel : MonoBehaviour
     {
         GameObject[] wheelBubbles = GameObject.FindGameObjectsWithTag("Wheel Bubble");
 
-        if(wheelBubbles.Length != hexCodeColors.Length)
+        if(wheelBubbles.Length != Colors.Length)
         {
             throw new System.Exception("You need to have the same amount of colors and wheel bubbles");
         }
 
-        for(int i = 0; i < hexCodeColors.Length; i++) {
+        for(int i = 0; i < Colors.Length; i++) {
 
-            wheelBubbles[i].GetComponent<SpriteRenderer>().color = hexCodeColors[i];
+            wheelBubbles[i].GetComponent<SpriteRenderer>().color = Colors[i];
         }
        
     }
