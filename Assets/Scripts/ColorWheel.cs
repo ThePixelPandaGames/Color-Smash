@@ -8,8 +8,8 @@ public class ColorWheel : MonoBehaviour
 {
    
     [SerializeField] float rotSpeed = 1;
-  
-    public float minSwipeDistance = 20f;
+
+    [SerializeField] float minSwipeDistance = 20f;
 
 
 
@@ -36,6 +36,8 @@ public class ColorWheel : MonoBehaviour
     void RotateWheel(float rotateAmount)
     {
         // Rotate the wheel around the Z-axis
-        transform.Rotate(Vector3.forward, rotateAmount * Time.deltaTime );
+        Quaternion targetRotation = Quaternion.Euler(0, 0, transform.eulerAngles.z + rotateAmount);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotSpeed * Time.deltaTime);
     }
 }
+
