@@ -6,8 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: a01de83f1b9766243b04d72ec07179cb
+  - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 9a79611931b82c04abd48a8ad77447b7
+  - enabled: 1
+    path: Assets/Scenes/How To Play.unity
+    guid: 88350e968fadf4943b6110826ea283f3
+  - enabled: 1
+    path: Assets/Scenes/Leaderboard.unity
+    guid: 970f5bd007eb68e44bb7d61e2704dd7b
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: 8bb2e74e91401fe4fa0a9591304436b8
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: b7155a6d755782442b9b936cdb2cef10, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 6efdfdffaf1f7d946a352476e02a2678, type: 2}
