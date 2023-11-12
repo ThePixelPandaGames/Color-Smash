@@ -10,9 +10,9 @@ public class EnemySpawnManager : MonoBehaviour
     [SerializeField] float xLimit, yLimit;
 
 
-    [SerializeField] private float enemySpeed;
+    private float enemySpeed;
 
-    public float EnemySpeed { get => enemySpeed; set => enemySpeed = value; }
+    [HideInInspector]public float EnemySpeed { get => enemySpeed; set => enemySpeed = value; }
 
     void SpawnEnemyPrefab()
     {

@@ -10,33 +10,38 @@ public class GameManager : MonoBehaviour
     private SpecialEffectFactory specialEffectFactory;
     private ColorWheel colorWheel;
     private GameOverLogic gameOverLogic;
-    private float effectFade = 5;
 
+
+
+    // enemy spawn
+    public float enemyMoveSpeed;
+    public float enemyMoveSpeedMultiplier;
+    public float enemySpawnStartIntervall;
+
+
+    // level up modifier
     [SerializeField] private float levelUpIntervall = 10;
+    public float levelUpSpawnIntervallDivider;
+    public float waitForFirstLevelUp;
 
-    public float enemyMoveSpeed = 3;
-    public float enemyMoveSpeedMultiplier = 1.1f;
 
 
-    public float spawnIntervallDivider = 1.25f;
-    public float startIntervall = 2;
+    // special effects
+    public float effectFade;
+    public float effectSpawnEffectIntervall;
+    public float waitForFirstSpecialEffectSpawn;
 
-    private float startIntervallGap = 1;
+    public float destroyEffectRange = 3;
 
-    public float SpawnEffectIntervall = 5;
+
+
+
     [HideInInspector] public bool isEffectSlotFree = true;
     [HideInInspector] public bool duringEffect = false;
-
-
     [HideInInspector] public bool isPaused = false;
-
     [HideInInspector] public SpecialEffect availableSpecialEffect;
-
     public SpriteRenderer effectRenderer;
-
     [HideInInspector] public bool isRainbowEffectActivated = false;
-
-
     [HideInInspector] public bool isGameOver = false;
     
 
@@ -61,12 +66,13 @@ public class GameManager : MonoBehaviour
 
 
 
-        InvokeRepeating(nameof(LevelUp), startIntervallGap, levelUpIntervall);
+        InvokeRepeating(nameof(LevelUp), waitForFirstLevelUp, levelUpIntervall);
 
 
-        InvokeRepeating(nameof(CreateNewSpecialEffect), 5, SpawnEffectIntervall);
+        InvokeRepeating(nameof(CreateNewSpecialEffect), waitForFirstSpecialEffectSpawn, effectSpawnEffectIntervall);
 
-        enemySpawnManager.StartSpawn(startIntervall, enemyMoveSpeed);
+
+        enemySpawnManager.StartSpawn(enemySpawnStartIntervall, enemyMoveSpeed);
 
     }
 
@@ -119,7 +125,7 @@ public class GameManager : MonoBehaviour
 
         enemySpawnManager.CancelInvoke();
 
-        enemySpawnManager.spawnIntervall /= spawnIntervallDivider;
+        enemySpawnManager.spawnIntervall /= levelUpSpawnIntervallDivider;
 
         enemyMoveSpeed *= enemyMoveSpeedMultiplier;
 
@@ -164,7 +170,7 @@ public class GameManager : MonoBehaviour
         DisableEffectPossibility();
 
         // do someting
-        Collider2D[] collided = Physics2D.OverlapCircleAll(Vector2.zero, 3);
+        Collider2D[] collided = Physics2D.OverlapCircleAll(Vector2.zero, destroyEffectRange);
 
         // start a particle system 
 

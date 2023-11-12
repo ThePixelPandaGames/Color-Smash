@@ -2005,12 +2005,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b139c0f28b7ebd408d386bd68f99b08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelUpIntervall: 20
   enemyMoveSpeed: 0.75
-  enemyMoveSpeedMultiplier: 1.1
-  spawnIntervallDivider: 1.1
-  startIntervall: 6
-  SpawnEffectIntervall: 5
+  enemyMoveSpeedMultiplier: 1.2
+  enemySpawnStartIntervall: 1
+  levelUpIntervall: 25
+  levelUpSpawnIntervallDivider: 1.2
+  waitForFirstLevelUp: 10
+  effectFade: 5
+  effectSpawnEffectIntervall: 10
+  waitForFirstSpecialEffectSpawn: 1
+  destroyEffectRange: 3
   isEffectSlotFree: 1
   duringEffect: 0
   isPaused: 0
@@ -2061,7 +2065,6 @@ MonoBehaviour:
   spawnIntervall: 0
   xLimit: 4
   yLimit: 6
-  enemySpeed: 0
 --- !u!114 &1647680352
 MonoBehaviour:
   m_ObjectHideFlags: 0

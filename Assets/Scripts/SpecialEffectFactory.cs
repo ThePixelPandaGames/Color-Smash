@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpecialEffectFactory : MonoBehaviour 
 {
     public Sprite slowDownTimeImage, rainbowImage, destroyImage;
-    public Sprite effectImage;
+    [HideInInspector]public Sprite effectImage;
 
 
     private SpecialEffect CreateSlowTimeEffect()
