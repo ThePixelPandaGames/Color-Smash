@@ -44,6 +44,8 @@ public static class SettingsManager
         PlayerPrefs.SetFloat("score", newSettings.score);
         PlayerPrefs.SetFloat("time", newSettings.time);
         PlayerPrefs.SetFloat("ratio", newSettings.ratio);
+
+        Debug.Log(newSettings.ratio);
     }
 
 

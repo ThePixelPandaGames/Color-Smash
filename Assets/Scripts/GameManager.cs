@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -43,6 +44,8 @@ public class GameManager : MonoBehaviour
     public SpriteRenderer effectRenderer;
     [HideInInspector] public bool isRainbowEffectActivated = false;
     [HideInInspector] public bool isGameOver = false;
+
+    public GameObject highScoreUI;
     
 
 
@@ -89,17 +92,10 @@ public class GameManager : MonoBehaviour
         colorWheel.rotSpeedMultiplier = SettingsManager.currentSettings.rotationSensitivity;
     }
 
-    private void Update()
-    {
-        if (isGameOver)
-        {
-            OnGameOver();
-        }
-    }
 
-    private void OnGameOver()
+    public void OnGameOver()
     {
-        Debug.Log("game Over");
+        isGameOver = true;
         CancelInvoke();
         StopAllCoroutines();
         timeManager.timeIsTicking = false;
@@ -107,6 +103,47 @@ public class GameManager : MonoBehaviour
 
         // display game over UI
         gameOverLogic.ShowGameOverUI();
+
+        SaveHighScoreIfApplicable();
+    }
+
+    private void SaveHighScoreIfApplicable()
+    {
+        float ratio = SettingsManager.currentSettings.ratio;
+
+        int secondsPast = timeManager.secondsPast;
+        int score = scoreManager.score;
+        Debug.Log("Score: " + score);
+        Debug.Log("time: " + secondsPast
+            );
+
+        float newRatio = (float)score / (float)secondsPast;
+
+        Debug.Log("old ratio: " + ratio);
+        Debug.Log("new ratio: " + newRatio);
+
+        if (newRatio > ratio)
+
+        {
+            Debug.Log("is bigger");
+            SettingsManager.SaveHighScore(score, secondsPast);
+            ShowHighScoreUI(score, secondsPast);
+        }else
+        {
+            HideHighScoreUI();
+        }
+    }
+
+    private void HideHighScoreUI()
+    {
+        highScoreUI.SetActive(false);
+    }
+
+    private void ShowHighScoreUI(int score, int time)
+    {
+        // display
+        highScoreUI.SetActive(true);
+        highScoreUI.GetComponent<TextMeshProUGUI>().text = "New Highscore:\nscore:" + score + " in \ntime:" + time;
     }
 
     public void CreateNewSpecialEffect()
