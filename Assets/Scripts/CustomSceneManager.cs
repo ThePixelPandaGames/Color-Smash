@@ -27,6 +27,7 @@ public class CustomSceneManager : MonoBehaviour
     public void LoadSettingsScene()
     {
         SceneManager.LoadScene("Settings");
+
     }
 
     public void LoadCreditsScene()
