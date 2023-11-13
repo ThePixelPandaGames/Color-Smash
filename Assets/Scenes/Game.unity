@@ -2007,7 +2007,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyMoveSpeed: 0.75
   enemyMoveSpeedMultiplier: 1.2
-  enemySpawnStartIntervall: 1
+  enemySpawnStartIntervall: 6
   levelUpIntervall: 25
   levelUpSpawnIntervallDivider: 1.2
   waitForFirstLevelUp: 10
