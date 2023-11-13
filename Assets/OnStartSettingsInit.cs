@@ -10,19 +10,17 @@ public class OnStartSettingsInit : MonoBehaviour
     public Slider SFX_slider;
     public Slider rotationSensitivity_slider;
 
-    SettingsManager settingsManager;
     void Start()
     {
-        settingsManager = GameObject.Find("Settings Manager").GetComponent<SettingsManager>();
         UpdateSettingsInfoUI();
     }
 
 
     private void UpdateSettingsInfoUI()
     {
-        music_slider.value = settingsManager.currentSettings.musicVolume;
-        SFX_slider.value = settingsManager.currentSettings.SFXVolume;
-        rotationSensitivity_slider.value = settingsManager.currentSettings.rotationSensitivity;
+        music_slider.value = SettingsManager.currentSettings.musicVolume;
+        SFX_slider.value = SettingsManager.currentSettings.SFXVolume;
+        rotationSensitivity_slider.value = SettingsManager.currentSettings.rotationSensitivity;
     }
 
 
@@ -35,6 +33,6 @@ public class OnStartSettingsInit : MonoBehaviour
         newSettings.SFXVolume = SFX_slider.value;
         newSettings.rotationSensitivity = rotationSensitivity_slider.value;
 
-        settingsManager.SaveSettings(newSettings);
+        SettingsManager.SaveSettings(newSettings);
     }
 }

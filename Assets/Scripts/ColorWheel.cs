@@ -9,6 +9,8 @@ public class ColorWheel : MonoBehaviour
 
     public GameObject[] wheelBubbles;
 
+    [HideInInspector] public float rotSpeedMultiplier = 1f;
+
 
     // should maybe be part of Game manager
     [SerializeField] Color[] Colors;
@@ -35,7 +37,7 @@ public class ColorWheel : MonoBehaviour
             if (touch.phase == TouchPhase.Moved && Mathf.Abs(touch.deltaPosition.y) >= minSwipeDistance)
             {
                 float swipeDirection = Mathf.Sign(touch.deltaPosition.y);
-                float rotateAmount = swipeDirection * rotSpeed;
+                float rotateAmount = swipeDirection * rotSpeed *rotSpeedMultiplier;
                 RotateWheel(rotateAmount);
             }
         }
@@ -45,7 +47,7 @@ public class ColorWheel : MonoBehaviour
     {
         // Rotate the wheel around the Z-axis
         Quaternion targetRotation = Quaternion.Euler(0, 0, transform.eulerAngles.z + rotateAmount);
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotSpeed * rotSpeedMultiplier * Time.deltaTime);
     }
 
     public void InitializeColorsOnWheels()

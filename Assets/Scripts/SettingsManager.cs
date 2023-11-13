@@ -1,46 +1,11 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
-public class SettingsManager: MonoBehaviour
+public static class SettingsManager
 {
-
-    public static SettingsManager instance;
-
-    public Settings currentSettings;
-
-
-    private void Start()
-    {
-        currentSettings = new Settings();
-
-        if (InMainMenuScene())
-        {
-            LoadSettings();
-        }
-
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("settings manager");
-
-        if (objs.Length > 1)
-        {
-            Destroy(this.gameObject);
-        }
-
-        DontDestroyOnLoad(this.gameObject);
-
-    }
-
-
-
-    private bool InMainMenuScene()
-    {
-        return SceneManager.GetActiveScene().name == "Main Menu";
-    }
-    public void LoadSettings()
+    public static Settings currentSettings = new Settings();
+  
+    public static void LoadSettings()
     {
         currentSettings.playerName = PlayerPrefs.GetString("playerName");
         currentSettings.musicVolume = PlayerPrefs.GetFloat("musicVolume");
@@ -53,7 +18,7 @@ public class SettingsManager: MonoBehaviour
 
 
 
-    public void SaveSettings(Settings newSettings) {
+    public static void SaveSettings(Settings newSettings) {
         currentSettings.playerName = newSettings.playerName;
         currentSettings.musicVolume = newSettings.musicVolume;
         currentSettings.SFXVolume = newSettings.SFXVolume;
@@ -68,7 +33,7 @@ public class SettingsManager: MonoBehaviour
     }
 
 
-    public void SaveHighScore(int score, int time)
+    public static void SaveHighScore(int score, int time)
     {
         Settings newSettings = new Settings();
 
