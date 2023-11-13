@@ -74,6 +74,19 @@ public class GameManager : MonoBehaviour
 
         enemySpawnManager.StartSpawn(enemySpawnStartIntervall, enemyMoveSpeed);
 
+
+        ApplySettings();
+
+    }
+
+    private void ApplySettings()
+    {
+        //  music
+
+        //  sfx
+
+        Debug.Log(SettingsManager.currentSettings.rotationSensitivity);
+        colorWheel.rotSpeedMultiplier = SettingsManager.currentSettings.rotationSensitivity;
     }
 
     private void Update()
