@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     private SpecialEffectFactory specialEffectFactory;
     private ColorWheel colorWheel;
     private GameOverLogic gameOverLogic;
+    private AnimationManager animManager;
+    private Camera camera;
+    private Shake cameraShake;
 
 
 
@@ -64,7 +67,11 @@ public class GameManager : MonoBehaviour
         scoreManager = GetComponent<ScoreManager>();
         timeManager = GetComponent<TimeManager>();
         specialEffectFactory = GetComponent<SpecialEffectFactory>();
-        gameOverLogic = GetComponent<GameOverLogic>();  
+        gameOverLogic = GetComponent<GameOverLogic>();
+        animManager = GetComponent<AnimationManager>();
+        camera = Camera.main;
+        cameraShake = camera.GetComponent<Shake>();
+
         colorWheel = GameObject.Find("Color Wheel").GetComponent<ColorWheel>(); 
 
 
@@ -153,7 +160,8 @@ public class GameManager : MonoBehaviour
             availableSpecialEffect = specialEffectFactory.CreateRandomEffect();
             effectRenderer.sprite = specialEffectFactory.effectImage;
             isEffectSlotFree = false;
-
+            animManager.StartCenterSpinAnim();
+            animManager.StartPulseAnim();
             StartCoroutine(EffectFade());
         }
     }
@@ -162,16 +170,22 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(effectFade);
 
-        isEffectSlotFree = true;
-        availableSpecialEffect = null;
-        effectRenderer.sprite = null;
-
+        if (!duringEffect)
+        {
+            isEffectSlotFree = true;
+            availableSpecialEffect = null;
+            effectRenderer.sprite = null;
+            animManager.StopCenterSpin();
+            animManager.StopPulseAnim();
+        }
     }
 
 
     public void LevelUp()
     {
         Debug.Log("Level up");
+
+        animManager.StartLevelUpAnim();
 
         enemySpawnManager.CancelInvoke();
 
@@ -184,6 +198,7 @@ public class GameManager : MonoBehaviour
 
     public void IncreaseScoreByOne()
     {
+        cameraShake.StartShake();
         scoreManager.IncreaseScoreByOne();
     }
 
@@ -213,6 +228,10 @@ public class GameManager : MonoBehaviour
             wheelBubble.GetComponent<SpriteRenderer>().color = Color.white;
         }
 
+        animManager.StopCenterSpin();
+        animManager.StopPulseAnim();
+
+
     }
 
     public void ActivateDestroy()
@@ -235,6 +254,10 @@ public class GameManager : MonoBehaviour
 
         isEffectSlotFree = true;
         duringEffect = false;
+        animManager.StopCenterSpin();
+        animManager.StopPulseAnim();
+
+
     }
 
     private void DisableEffectPossibility()
@@ -257,11 +280,15 @@ public class GameManager : MonoBehaviour
         isEffectSlotFree = true;
         colorWheel.InitializeColorsOnWheels();
         duringEffect = false;
+        animManager.StopCenterSpin();
+        animManager.StopPulseAnim();
+
 
     }
 
-   
 
+
+    // maybe put these two methods down together
     IEnumerator HalfEnemySpeedCo(int cooldown)
     {
         // get all enemies in scene
@@ -288,6 +315,9 @@ public class GameManager : MonoBehaviour
         enemySpawnManager.EnemySpeed = enemyMoveSpeed;
         isEffectSlotFree = true;
         duringEffect = false;
+        animManager.StopCenterSpin();
+        animManager.StopPulseAnim();
+
 
     }
 
@@ -305,7 +335,8 @@ public class GameManager : MonoBehaviour
 
         isEffectSlotFree = true;
         duringEffect = false;
-
+        animManager.StopCenterSpin();
+        animManager.StopPulseAnim();
     }
 
 
