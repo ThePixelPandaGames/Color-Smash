@@ -1647,6 +1647,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: delete leaderboard
       objectReference: {fileID: 0}
+    - target: {fileID: 4259233384698694627, guid: 7cf84e13f2264cc4c9dfb744025912e2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4918611508591332731, guid: 7cf84e13f2264cc4c9dfb744025912e2, type: 3}
       propertyPath: m_Enabled
       value: 0
