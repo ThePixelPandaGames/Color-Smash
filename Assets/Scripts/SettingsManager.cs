@@ -33,19 +33,18 @@ public static class SettingsManager
     }
 
 
-    public static void SaveHighScore(int score, int time)
+    public static void SaveHighScore(float score, float time, float ratio)
     {
         Settings newSettings = new Settings();
 
         newSettings.score = score;
         newSettings.time = time;
-        newSettings.ratio = score / time;
+        newSettings.ratio = ratio;
 
+      
         PlayerPrefs.SetFloat("score", newSettings.score);
         PlayerPrefs.SetFloat("time", newSettings.time);
         PlayerPrefs.SetFloat("ratio", newSettings.ratio);
-
-        Debug.Log(newSettings.ratio);
     }
 
 

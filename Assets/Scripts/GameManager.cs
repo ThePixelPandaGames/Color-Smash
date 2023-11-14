@@ -126,7 +126,7 @@ public class GameManager : MonoBehaviour
 
         {
             Debug.Log("is bigger");
-            SettingsManager.SaveHighScore(score, secondsPast);
+            SettingsManager.SaveHighScore(score, secondsPast, newRatio);
             ShowHighScoreUI(score, secondsPast);
         }else
         {

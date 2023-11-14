@@ -5,6 +5,8 @@ public class PauseManager : MonoBehaviour
     public GameObject PauseUI;
     public GameObject colorWheel;
     public GameObject effectImage;
+    public GameObject centerBubble;
+
 
     public void ShowPauseUI()
     {
@@ -13,6 +15,8 @@ public class PauseManager : MonoBehaviour
         PauseUI.SetActive(true);
         colorWheel.SetActive(false);
         effectImage.SetActive(false);
+        centerBubble.SetActive(false);
+
     }
 
     public void HidePauseUI()
@@ -27,6 +31,8 @@ public class PauseManager : MonoBehaviour
         GetComponent<TimeManager>().ResumeTimer();
         HidePauseUI();
         colorWheel.SetActive(true);
+        centerBubble.SetActive(true);
+
         effectImage.SetActive(true);
 
     }
