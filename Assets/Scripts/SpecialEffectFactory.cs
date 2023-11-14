@@ -22,7 +22,7 @@ public class SpecialEffectFactory : MonoBehaviour
 
     private SpecialEffect CreateDestroyEffect()
     {
-        effectImage = rainbowImage;
+        effectImage = destroyImage;
         return new SFX_Destroy();
     }
 

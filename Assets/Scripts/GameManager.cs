@@ -11,7 +11,9 @@ public class GameManager : MonoBehaviour
     private SpecialEffectFactory specialEffectFactory;
     private ColorWheel colorWheel;
     private GameOverLogic gameOverLogic;
-    private AnimationManager animManager;
+    private AnimationManager animManager; 
+    private ParticleManager partManager;
+
     private Camera camera;
     private Shake cameraShake;
 
@@ -69,6 +71,8 @@ public class GameManager : MonoBehaviour
         specialEffectFactory = GetComponent<SpecialEffectFactory>();
         gameOverLogic = GetComponent<GameOverLogic>();
         animManager = GetComponent<AnimationManager>();
+        partManager = GetComponent<ParticleManager>();
+
         camera = Camera.main;
         cameraShake = camera.GetComponent<Shake>();
 
@@ -205,6 +209,8 @@ public class GameManager : MonoBehaviour
     public void HalfEnemySpeed(int cooldown)
     {
         DisableEffectPossibility();
+        animManager.StartEffectAnim();
+
 
         StartCoroutine(HalfEnemySpeedCo(cooldown));
     }
@@ -212,14 +218,18 @@ public class GameManager : MonoBehaviour
     public void HalfClockTime(int cooldown)
     {
         DisableEffectPossibility();
+        //animManager.StartEffectAnim();
 
         StartCoroutine(HalfClockTimeCo(cooldown));
 
     }
 
+  
     public void ActivateRainbow(int cooldown)
     {
         DisableEffectPossibility();
+        animManager.StartEffectAnim();
+
 
         StartCoroutine(ActivateRainbowCo(cooldown));
         // add some visual effects, maybe a rainbow color shader
@@ -228,15 +238,16 @@ public class GameManager : MonoBehaviour
             wheelBubble.GetComponent<SpriteRenderer>().color = Color.white;
         }
 
-        animManager.StopCenterSpin();
-        animManager.StopPulseAnim();
-
+    
 
     }
 
     public void ActivateDestroy()
     {
         DisableEffectPossibility();
+        animManager.StartEffectAnim();
+        partManager.PlayFireParticleEffect();
+
 
         // do someting
         Collider2D[] collided = Physics2D.OverlapCircleAll(Vector2.zero, destroyEffectRange);
@@ -251,12 +262,24 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        StartCoroutine(DestroyCo());
+
+
+
+    }
+
+
+    IEnumerator DestroyCo()
+    {
+        yield return new WaitForSecondsRealtime(1);
+
 
         isEffectSlotFree = true;
         duringEffect = false;
         animManager.StopCenterSpin();
         animManager.StopPulseAnim();
-
+        animManager.StopEffectAnim();
+        effectRenderer.sprite = null;
 
     }
 
@@ -264,7 +287,7 @@ public class GameManager : MonoBehaviour
     {
         duringEffect = true;
         availableSpecialEffect = null;
-        effectRenderer.sprite = null;
+        //effectRenderer.sprite = null;
     }
 
 
@@ -282,7 +305,8 @@ public class GameManager : MonoBehaviour
         duringEffect = false;
         animManager.StopCenterSpin();
         animManager.StopPulseAnim();
-
+        animManager.StopEffectAnim();
+        effectRenderer.sprite = null;
 
     }
 
@@ -312,13 +336,15 @@ public class GameManager : MonoBehaviour
         {
             enemy.GetComponent<EnemyMovement>().moveSpeed = enemyMoveSpeed;
         }
+
+
         enemySpawnManager.EnemySpeed = enemyMoveSpeed;
         isEffectSlotFree = true;
         duringEffect = false;
         animManager.StopCenterSpin();
         animManager.StopPulseAnim();
-
-
+        animManager.StopEffectAnim();
+        effectRenderer.sprite = null;
     }
 
     IEnumerator HalfClockTimeCo(int cooldown)
@@ -337,6 +363,8 @@ public class GameManager : MonoBehaviour
         duringEffect = false;
         animManager.StopCenterSpin();
         animManager.StopPulseAnim();
+        animManager.StopEffectAnim();
+        effectRenderer.sprite = null;
     }
 
 

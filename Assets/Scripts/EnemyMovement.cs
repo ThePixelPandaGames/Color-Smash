@@ -37,6 +37,7 @@ public class EnemyMovement : MonoBehaviour
         transform.Translate(normDirectionVector * moveSpeed * Time.deltaTime);  
     }
 
+
     private Vector2 GetDirection()
     {
         return (wheelCenter.position - transform.position).normalized;   
