@@ -6,6 +6,7 @@ public class MusicManager : MonoBehaviour
 {
     public AudioSource musicSource;
     public AudioClip menuMusic;
+    public AudioClip buttonSound;
 
 
     private void Start()
@@ -26,6 +27,10 @@ public class MusicManager : MonoBehaviour
     }
 
  
+    public void PlayButtonSound()
+    {
+        musicSource.PlayOneShot(buttonSound);
+    }
 
     public void StartMenuMusic()
     {

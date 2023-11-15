@@ -1,16 +1,17 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ButtonSound : MonoBehaviour
 {
-    private AudioSource audioSource;
-
+    private MusicManager musicManager;
     void Start()
     {
-        audioSource= GetComponent<AudioSource>();   
+        musicManager = GameObject.FindGameObjectWithTag("Music Manager").GetComponent<MusicManager>();  
     }
 
     public void PlayButtonSound()
     {
-        audioSource.Play(); 
+        musicManager.PlayButtonSound();
     }
 }
