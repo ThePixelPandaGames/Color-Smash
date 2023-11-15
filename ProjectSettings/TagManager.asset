@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Wheel Center
   - settings manager
+  - Music Manager
   layers:
   - Default
   - TransparentFX

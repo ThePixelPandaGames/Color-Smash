@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     private GameOverLogic gameOverLogic;
     private AnimationManager animManager; 
     private ParticleManager partManager;
+    private SoundManager soundManager;
+    private MusicManager musicManager;
 
     private Camera camera;
     private Shake cameraShake;
@@ -72,6 +74,9 @@ public class GameManager : MonoBehaviour
         gameOverLogic = GetComponent<GameOverLogic>();
         animManager = GetComponent<AnimationManager>();
         partManager = GetComponent<ParticleManager>();
+        soundManager = GetComponent<SoundManager>();
+        //musicManager = GetComponent<MusicManager>();    
+        musicManager = GameObject.FindGameObjectWithTag("Music Manager").GetComponent<MusicManager>();  
 
         camera = Camera.main;
         cameraShake = camera.GetComponent<Shake>();
@@ -114,6 +119,10 @@ public class GameManager : MonoBehaviour
 
         // display game over UI
         gameOverLogic.ShowGameOverUI();
+
+        musicManager.ResetAudioSpeed();
+        soundManager.ShotGameOverSFX();
+        musicManager.StopBgMusic();
 
         SaveHighScoreIfApplicable();
     }
@@ -187,7 +196,7 @@ public class GameManager : MonoBehaviour
 
     public void LevelUp()
     {
-        Debug.Log("Level up");
+        soundManager.ShotLeveUpSFX();
 
         animManager.StartLevelUpAnim();
 
@@ -202,6 +211,7 @@ public class GameManager : MonoBehaviour
 
     public void IncreaseScoreByOne()
     {
+        soundManager.ShotScoreSFX();
         cameraShake.StartShake();
         scoreManager.IncreaseScoreByOne();
     }
@@ -229,6 +239,7 @@ public class GameManager : MonoBehaviour
     {
         DisableEffectPossibility();
         animManager.StartEffectAnim();
+        soundManager.ShotStarSFX();
 
 
         StartCoroutine(ActivateRainbowCo(cooldown));
@@ -247,7 +258,7 @@ public class GameManager : MonoBehaviour
         DisableEffectPossibility();
         animManager.StartEffectAnim();
         partManager.PlayFireParticleEffect();
-
+        soundManager.ShotFireSFX();
 
         // do someting
         Collider2D[] collided = Physics2D.OverlapCircleAll(Vector2.zero, destroyEffectRange);
@@ -316,6 +327,8 @@ public class GameManager : MonoBehaviour
     IEnumerator HalfEnemySpeedCo(int cooldown)
     {
         // get all enemies in scene
+        soundManager.ShotHourglassSFX();
+        musicManager.ReduceAudioSpeedBy(0.5f);
 
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject enemy in enemies)
@@ -345,6 +358,8 @@ public class GameManager : MonoBehaviour
         animManager.StopPulseAnim();
         animManager.StopEffectAnim();
         effectRenderer.sprite = null;
+
+        musicManager.ResetAudioSpeed();
     }
 
     IEnumerator HalfClockTimeCo(int cooldown)

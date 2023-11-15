@@ -26,12 +26,17 @@ public class GameOverLogic : MonoBehaviour
 
     public void TryAgainButton()
     {
+        MusicManager musicManager = GameObject.FindGameObjectWithTag("Music Manager").GetComponent<MusicManager>();
+        musicManager.StartMenuMusic();
         HideGameOverUI();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void BackToMenuButton()
     {
-        // use scene manager to go back
+        MusicManager musicManager = GameObject.FindGameObjectWithTag("Music Manager").GetComponent<MusicManager>();
+        musicManager.StartMenuMusic();
+        HideGameOverUI();
+        SceneManager.LoadScene("Main Menu");
     }
 }
