@@ -101,6 +101,7 @@ public class GameManager : MonoBehaviour
     private void ApplySettings()
     {
         //  music
+        musicManager.StartMenuMusic();
 
         //  sfx
 

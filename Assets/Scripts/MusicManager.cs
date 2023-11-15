@@ -13,6 +13,7 @@ public class MusicManager : MonoBehaviour
     {
         musicSource = GetComponent<AudioSource>();  
         musicSource.clip = menuMusic;
+        musicSource.loop = true;
         musicSource.Play();
 
         GameObject[] objs = GameObject.FindGameObjectsWithTag("Music Manager");
