@@ -13,7 +13,10 @@ public static class SettingsManager
         currentSettings.rotationSensitivity = PlayerPrefs.GetFloat("rotationSensitivity");
         currentSettings.score = PlayerPrefs.GetFloat("score");
         currentSettings.time = PlayerPrefs.GetFloat("time");
-        currentSettings.ratio = PlayerPrefs.GetFloat("ratio"); 
+        currentSettings.ratio = PlayerPrefs.GetFloat("ratio");
+        currentSettings.isMusicOn = PlayerPrefs.GetInt("isMusicOn");
+        currentSettings.isSFXOn = PlayerPrefs.GetInt("isSFXOn");
+
     }
 
 
@@ -23,9 +26,13 @@ public static class SettingsManager
         currentSettings.musicVolume = newSettings.musicVolume;
         currentSettings.SFXVolume = newSettings.SFXVolume;
         currentSettings.rotationSensitivity = newSettings.rotationSensitivity;
+        currentSettings.isMusicOn = newSettings.isMusicOn;
+        currentSettings.isSFXOn = newSettings.isSFXOn;  
 
         PlayerPrefs.SetString("playerName", newSettings.playerName);
         PlayerPrefs.SetFloat("musicVolume", newSettings.musicVolume);
+        PlayerPrefs.SetInt("isMusicOn", newSettings.isMusicOn);
+        PlayerPrefs.SetInt("isSFXOn", newSettings.isSFXOn);
         PlayerPrefs.SetFloat("SFXVolume", newSettings.SFXVolume);
         PlayerPrefs.SetFloat("rotationSensitivity", newSettings.rotationSensitivity);
 
@@ -62,7 +69,9 @@ public class Settings
     public float rotationSensitivity;
     public float score;
     public float time;
-    public float ratio; 
+    public float ratio;
+    public int isMusicOn;
+    public int isSFXOn;
 }
 
 

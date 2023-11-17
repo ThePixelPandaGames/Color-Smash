@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseManager : MonoBehaviour
 {
@@ -6,6 +7,54 @@ public class PauseManager : MonoBehaviour
     public GameObject colorWheel;
     public GameObject effectImage;
     public GameObject centerBubble;
+
+    public Toggle musicToggle;
+    public Toggle SFXToggle;
+
+    private MusicManager musicManager;
+    private SoundManager soundManager;
+
+    private void Start()
+    {
+        musicManager = GameObject.FindGameObjectWithTag("Music Manager").GetComponent<MusicManager>();
+        soundManager = GetComponent<SoundManager>();
+    }
+
+    public void ToggleMusic()
+    {
+        Debug.Log("changing music");
+        Settings newSettings = SettingsManager.currentSettings;
+
+        if (musicToggle.isOn )
+        {
+            musicManager.SetVolumeTo(SettingsManager.currentSettings.musicVolume);
+            newSettings.isMusicOn = 1;
+        }
+        else
+        {
+            musicManager.SetVolumeTo(0);
+            newSettings.isMusicOn = 0;
+        }
+
+        SettingsManager.SaveSettings(newSettings);
+    }
+
+    public void ToggleSFX()
+    {
+        Settings newSettings = SettingsManager.currentSettings;
+
+        if (SFXToggle.isOn)
+        {
+            soundManager.SetVolumeTo(SettingsManager.currentSettings.SFXVolume);
+            newSettings.isMusicOn = 1;
+        }
+        else
+        {
+            soundManager.SetVolumeTo(0);
+            newSettings.isMusicOn = 0;
+        }
+        SettingsManager.SaveSettings(newSettings);
+    }
 
 
     public void ShowPauseUI()
@@ -16,6 +65,10 @@ public class PauseManager : MonoBehaviour
         colorWheel.SetActive(false);
         effectImage.SetActive(false);
         centerBubble.SetActive(false);
+
+
+        //if (SettingsManager.currentSettings.isMusicOn == 0) musicToggle.isOn = false; else musicToggle.isOn = true;
+        //if (SettingsManager.currentSettings.isSFXOn == 0) SFXToggle.isOn = false; else SFXToggle.isOn = true;
 
     }
 
@@ -39,6 +92,6 @@ public class PauseManager : MonoBehaviour
 
     public void BackToMenuButton()
     {
-        // use scene manager to go back
+        
     }
 }

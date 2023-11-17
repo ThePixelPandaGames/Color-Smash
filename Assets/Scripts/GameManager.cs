@@ -101,10 +101,18 @@ public class GameManager : MonoBehaviour
         //  music
         if(!musicManager.IsPlaying())musicManager.StartMenuMusic();
 
-        musicManager.SetVolumeTo(SettingsManager.currentSettings.musicVolume);
 
+        if (SettingsManager.currentSettings.isMusicOn == 1) musicManager.SetVolumeTo(SettingsManager.currentSettings.musicVolume);
+        else
+        {
+            musicManager.SetVolumeTo(0);
+        }
         //  sfx
-        soundManager.SetVolumeTo(SettingsManager.currentSettings.SFXVolume);
+        if (SettingsManager.currentSettings.isSFXOn == 1) soundManager.SetVolumeTo(SettingsManager.currentSettings.SFXVolume);
+        else
+        {
+            soundManager.SetVolumeTo(0);    
+        }
         
         // color wheel
         colorWheel.rotSpeedMultiplier = SettingsManager.currentSettings.rotationSensitivity;
