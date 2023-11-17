@@ -1949,7 +1949,7 @@ GameObject:
   - component: {fileID: 1955065723}
   - component: {fileID: 1955065722}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Main Menu Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

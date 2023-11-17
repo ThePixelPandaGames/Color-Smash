@@ -2,15 +2,20 @@ using UnityEngine;
 
 public class MainMenuManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    MusicManager musicManager;
     void Start()
     {
         SettingsManager.LoadSettings();
+
+        musicManager = GameObject.Find("MusicManager").GetComponent<MusicManager>();    
+
+        ApplySettings();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void ApplySettings()
     {
-        
+        musicManager.SetVolumeTo(SettingsManager.currentSettings.musicVolume);
     }
+
+  
 }

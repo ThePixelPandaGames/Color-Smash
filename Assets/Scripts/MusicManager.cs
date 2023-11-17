@@ -11,6 +11,7 @@ public class MusicManager : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("START MUSIC MANAGER");
         musicSource = GetComponent<AudioSource>();  
         musicSource.clip = menuMusic;
         musicSource.loop = true;
@@ -53,5 +54,15 @@ public class MusicManager : MonoBehaviour
     public void ResetAudioSpeed()
     {
         musicSource.pitch = 1;
+    }
+
+    public void SetVolumeTo(float volumeValue)
+    {
+        musicSource.volume = volumeValue;
+    }
+
+    public bool IsPlaying()
+    {
+        return musicSource.isPlaying;
     }
 }

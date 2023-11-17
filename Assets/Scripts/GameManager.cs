@@ -63,7 +63,6 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
 
-        // maybe necessary?
         Time.timeScale = 1;
 
 
@@ -75,7 +74,6 @@ public class GameManager : MonoBehaviour
         animManager = GetComponent<AnimationManager>();
         partManager = GetComponent<ParticleManager>();
         soundManager = GetComponent<SoundManager>();
-        //musicManager = GetComponent<MusicManager>();    
         musicManager = GameObject.FindGameObjectWithTag("Music Manager").GetComponent<MusicManager>();  
 
         camera = Camera.main;
@@ -101,11 +99,14 @@ public class GameManager : MonoBehaviour
     private void ApplySettings()
     {
         //  music
-        musicManager.StartMenuMusic();
+        if(!musicManager.IsPlaying())musicManager.StartMenuMusic();
+
+        musicManager.SetVolumeTo(SettingsManager.currentSettings.musicVolume);
 
         //  sfx
-
-        Debug.Log(SettingsManager.currentSettings.rotationSensitivity);
+        soundManager.SetVolumeTo(SettingsManager.currentSettings.SFXVolume);
+        
+        // color wheel
         colorWheel.rotSpeedMultiplier = SettingsManager.currentSettings.rotationSensitivity;
     }
 

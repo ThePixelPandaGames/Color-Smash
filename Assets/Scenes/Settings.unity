@@ -224,9 +224,37 @@ PrefabInstance:
       value: 4096
       objectReference: {fileID: 0}
     - target: {fileID: 6788207044186599667, guid: 7cf84e13f2264cc4c9dfb744025912e2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6788207044186599667, guid: 7cf84e13f2264cc4c9dfb744025912e2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6788207044186599667, guid: 7cf84e13f2264cc4c9dfb744025912e2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 298251386}
+    - target: {fileID: 6788207044186599667, guid: 7cf84e13f2264cc4c9dfb744025912e2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 298251386}
+    - target: {fileID: 6788207044186599667, guid: 7cf84e13f2264cc4c9dfb744025912e2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6788207044186599667, guid: 7cf84e13f2264cc4c9dfb744025912e2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SaveSettings
+      objectReference: {fileID: 0}
+    - target: {fileID: 6788207044186599667, guid: 7cf84e13f2264cc4c9dfb744025912e2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: OnStartSettingsInit, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6788207044186599667, guid: 7cf84e13f2264cc4c9dfb744025912e2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -821,6 +849,34 @@ PrefabInstance:
     - target: {fileID: 4934635046812142147, guid: 6c17fef98182238488fe1bbbb29db61e, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569106987966552806, guid: 6c17fef98182238488fe1bbbb29db61e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569106987966552806, guid: 6c17fef98182238488fe1bbbb29db61e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569106987966552806, guid: 6c17fef98182238488fe1bbbb29db61e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569106987966552806, guid: 6c17fef98182238488fe1bbbb29db61e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569106987966552806, guid: 6c17fef98182238488fe1bbbb29db61e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnValueChanged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569106987966552806, guid: 6c17fef98182238488fe1bbbb29db61e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: OnSliderValueChange, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569106987966552806, guid: 6c17fef98182238488fe1bbbb29db61e, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7003240726570723268, guid: 6c17fef98182238488fe1bbbb29db61e, type: 3}
       propertyPath: m_Name

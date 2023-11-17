@@ -20,7 +20,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip sfx_se_hourglass;
 
 
-    private void Start()
+    private void Awake()
     {
         audioSource = GetComponent<AudioSource>();  
 
@@ -56,6 +56,13 @@ public class SoundManager : MonoBehaviour
     public void ShotHourglassSFX()
     {
         audioSource.PlayOneShot(sfx_se_hourglass);
+    }
+
+
+    public void SetVolumeTo(float volumeValue)
+    {
+        Debug.Log("audioSource: " + audioSource);
+        audioSource.volume = volumeValue;
     }
 
 }
