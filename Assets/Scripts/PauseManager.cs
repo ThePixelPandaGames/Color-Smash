@@ -46,12 +46,12 @@ public class PauseManager : MonoBehaviour
         if (SFXToggle.isOn)
         {
             soundManager.SetVolumeTo(SettingsManager.currentSettings.SFXVolume);
-            newSettings.isMusicOn = 1;
+            newSettings.isSFXOn = 1;
         }
         else
         {
             soundManager.SetVolumeTo(0);
-            newSettings.isMusicOn = 0;
+            newSettings.isSFXOn = 0;
         }
         SettingsManager.SaveSettings(newSettings);
     }
@@ -67,8 +67,8 @@ public class PauseManager : MonoBehaviour
         centerBubble.SetActive(false);
 
 
-        //if (SettingsManager.currentSettings.isMusicOn == 0) musicToggle.isOn = false; else musicToggle.isOn = true;
-        //if (SettingsManager.currentSettings.isSFXOn == 0) SFXToggle.isOn = false; else SFXToggle.isOn = true;
+        if (SettingsManager.currentSettings.isMusicOn == 0) musicToggle.SetIsOnWithoutNotify(false); else musicToggle.SetIsOnWithoutNotify(true);
+        if (SettingsManager.currentSettings.isSFXOn == 0) SFXToggle.SetIsOnWithoutNotify(false); else SFXToggle.SetIsOnWithoutNotify(true);
 
     }
 
