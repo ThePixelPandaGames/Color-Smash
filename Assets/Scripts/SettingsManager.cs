@@ -54,6 +54,16 @@ public static class SettingsManager
         PlayerPrefs.SetFloat("ratio", newSettings.ratio);
     }
 
+    public static void DeleteHighScore()
+    {
+        PlayerPrefs.SetFloat("score", 0);
+        PlayerPrefs.SetFloat("time", 0);
+        PlayerPrefs.SetFloat("ratio", 0);
+
+        currentSettings.score = 0;
+        currentSettings.time = 0;
+        currentSettings.ratio = 0;
+    }
 
 }
 
