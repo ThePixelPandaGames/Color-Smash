@@ -11,10 +11,11 @@ public class GameManager : MonoBehaviour
     private SpecialEffectFactory specialEffectFactory;
     private ColorWheel colorWheel;
     private GameOverLogic gameOverLogic;
-    private AnimationManager animManager; 
+    private AnimationManager animManager;
     private ParticleManager partManager;
     private SoundManager soundManager;
     private MusicManager musicManager;
+    private PlayerLife playerLife;
 
     private Camera camera;
     private Shake cameraShake;
@@ -53,7 +54,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public bool isGameOver = false;
 
     public GameObject highScoreUI;
-    
+
 
 
     void Start()
@@ -74,12 +75,13 @@ public class GameManager : MonoBehaviour
         animManager = GetComponent<AnimationManager>();
         partManager = GetComponent<ParticleManager>();
         soundManager = GetComponent<SoundManager>();
-        musicManager = GameObject.FindGameObjectWithTag("Music Manager").GetComponent<MusicManager>();  
+        musicManager = GameObject.FindGameObjectWithTag("Music Manager").GetComponent<MusicManager>();
+        playerLife = GetComponent<PlayerLife>();
 
         camera = Camera.main;
         cameraShake = camera.GetComponent<Shake>();
 
-        colorWheel = GameObject.Find("Color Wheel").GetComponent<ColorWheel>(); 
+        colorWheel = GameObject.Find("Color Wheel").GetComponent<ColorWheel>();
 
 
 
@@ -89,17 +91,26 @@ public class GameManager : MonoBehaviour
         InvokeRepeating(nameof(CreateNewSpecialEffect), waitForFirstSpecialEffectSpawn, effectSpawnEffectIntervall);
 
 
-        enemySpawnManager.StartSpawn(enemySpawnStartIntervall, 0,enemyMoveSpeed);
+        enemySpawnManager.StartSpawn(enemySpawnStartIntervall, 0, enemyMoveSpeed);
 
 
         ApplySettings();
 
     }
 
+    public void DecreasePlayerLife()
+    {
+        playerLife.RemovePlayerLife();
+        if (playerLife.CurrentPlayerLife == 0)
+        {
+            OnGameOver();
+        }
+    }
+
     private void ApplySettings()
     {
         //  music
-        if(!musicManager.IsPlaying())musicManager.StartMenuMusic();
+        if (!musicManager.IsPlaying()) musicManager.StartMenuMusic();
 
 
         if (SettingsManager.currentSettings.isMusicOn == 1) musicManager.SetVolumeTo(SettingsManager.currentSettings.musicVolume);
@@ -111,9 +122,9 @@ public class GameManager : MonoBehaviour
         if (SettingsManager.currentSettings.isSFXOn == 1) soundManager.SetVolumeTo(SettingsManager.currentSettings.SFXVolume);
         else
         {
-            soundManager.SetVolumeTo(0);    
+            soundManager.SetVolumeTo(0);
         }
-        
+
         // color wheel
         colorWheel.rotSpeedMultiplier = SettingsManager.currentSettings.rotationSensitivity;
     }
@@ -165,7 +176,8 @@ public class GameManager : MonoBehaviour
             Debug.Log("is bigger");
             SettingsManager.SaveHighScore(score, secondsPast, newRatio);
             ShowHighScoreUI(score, secondsPast);
-        }else
+        }
+        else
         {
             HideHighScoreUI();
         }
@@ -223,7 +235,7 @@ public class GameManager : MonoBehaviour
 
         enemyMoveSpeed *= enemyMoveSpeedMultiplier;
 
-        enemySpawnManager.StartSpawn(enemySpawnManager.spawnIntervall, 2,enemyMoveSpeed);
+        enemySpawnManager.StartSpawn(enemySpawnManager.spawnIntervall, 2, enemyMoveSpeed);
     }
 
     public void IncreaseScoreByOne()
@@ -251,7 +263,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-  
+
     public void ActivateRainbow(int cooldown)
     {
         DisableEffectPossibility();
@@ -261,12 +273,12 @@ public class GameManager : MonoBehaviour
 
         StartCoroutine(ActivateRainbowCo(cooldown));
         // add some visual effects, maybe a rainbow color shader
-        foreach(GameObject wheelBubble in colorWheel.wheelBubbles)
+        foreach (GameObject wheelBubble in colorWheel.wheelBubbles)
         {
             wheelBubble.GetComponent<SpriteRenderer>().color = Color.white;
         }
 
-    
+
 
     }
 
@@ -282,7 +294,7 @@ public class GameManager : MonoBehaviour
 
         // start a particle system 
 
-        foreach(Collider2D col in collided)
+        foreach (Collider2D col in collided)
         {
             if (col.gameObject.CompareTag("Enemy"))
             {
@@ -315,7 +327,6 @@ public class GameManager : MonoBehaviour
     {
         duringEffect = true;
         availableSpecialEffect = null;
-        //effectRenderer.sprite = null;
     }
 
 
