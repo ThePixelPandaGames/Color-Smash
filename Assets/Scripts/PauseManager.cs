@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +14,8 @@ public class PauseManager : MonoBehaviour
 
     private MusicManager musicManager;
     private SoundManager soundManager;
+
+    public Sprite circleSprite;
 
     private void Start()
     {
@@ -67,6 +70,12 @@ public class PauseManager : MonoBehaviour
         centerBubble.SetActive(false);
 
 
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach(GameObject enemy in enemies) {
+            enemy.GetComponent<SpriteRenderer>().sprite = null;
+        }
+
+
         if (SettingsManager.currentSettings.isMusicOn == 0) musicToggle.SetIsOnWithoutNotify(false); else musicToggle.SetIsOnWithoutNotify(true);
         if (SettingsManager.currentSettings.isSFXOn == 0) SFXToggle.SetIsOnWithoutNotify(false); else SFXToggle.SetIsOnWithoutNotify(true);
 
@@ -87,6 +96,13 @@ public class PauseManager : MonoBehaviour
         centerBubble.SetActive(true);
 
         effectImage.SetActive(true);
+
+
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+        {
+            enemy.GetComponent<SpriteRenderer>().sprite = circleSprite;
+        }
 
     }
 

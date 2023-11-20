@@ -2748,6 +2748,7 @@ MonoBehaviour:
   centerBubble: {fileID: 996250386}
   musicToggle: {fileID: 1973653573}
   SFXToggle: {fileID: 1113324590}
+  circleSprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
 --- !u!114 &1647680356
 MonoBehaviour:
   m_ObjectHideFlags: 0

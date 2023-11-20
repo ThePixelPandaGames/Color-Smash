@@ -135,6 +135,13 @@ public class GameManager : MonoBehaviour
         musicManager.StopBgMusic();
 
         SaveHighScoreIfApplicable();
+
+
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+        {
+            Destroy(enemy);
+        }
     }
 
     private void SaveHighScoreIfApplicable()
