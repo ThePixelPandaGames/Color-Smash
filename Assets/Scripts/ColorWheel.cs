@@ -13,7 +13,7 @@ public class ColorWheel : MonoBehaviour
 
 
     // should maybe be part of Game manager
-    [SerializeField] Color[] Colors;
+    [SerializeField] public Color[] Colors;
 
     public Color GetRandomColorFromWheel()
     {

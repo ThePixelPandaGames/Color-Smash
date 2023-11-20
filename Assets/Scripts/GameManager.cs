@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -105,6 +106,33 @@ public class GameManager : MonoBehaviour
         {
             OnGameOver();
         }
+    }
+
+    private Color GetRandomColorFromColorArray(Color[] colors)
+    {
+        return colors[Random.Range(0, colors.Length)];   
+    }
+
+
+    IEnumerator ActivateRaindowColorEffectOnWheels()
+    {
+        Color[] colors = colorWheel.Colors;
+        GameObject[] wheels = GameObject.FindGameObjectsWithTag("Wheel Bubble");
+        
+        
+
+        while (isRainbowEffectActivated)
+        {
+            foreach (GameObject wheel in wheels) { 
+                wheel.GetComponent<SpriteRenderer>().color = GetRandomColorFromColorArray(colors); 
+            }
+
+            yield return new WaitForSecondsRealtime(0.1f);
+        }
+
+
+
+        yield return null;
     }
 
     private void ApplySettings()
@@ -271,12 +299,15 @@ public class GameManager : MonoBehaviour
         soundManager.ShotStarSFX();
 
 
+
         StartCoroutine(ActivateRainbowCo(cooldown));
         // add some visual effects, maybe a rainbow color shader
-        foreach (GameObject wheelBubble in colorWheel.wheelBubbles)
-        {
-            wheelBubble.GetComponent<SpriteRenderer>().color = Color.white;
-        }
+        //foreach (GameObject wheelBubble in colorWheel.wheelBubbles)
+        //{
+        //    wheelBubble.GetComponent<SpriteRenderer>().color = Color.white;
+        //}
+        StartCoroutine(ActivateRaindowColorEffectOnWheels());
+
 
 
 
