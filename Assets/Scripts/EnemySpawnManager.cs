@@ -49,7 +49,7 @@ public class EnemySpawnManager : MonoBehaviour
 
 
 
-    public void StartSpawn(float newIntervall, float newEnemySpeed)
+    public void StartSpawn(float newIntervall, float waitBeforeSpawn, float newEnemySpeed)
     {
         spawnIntervall = newIntervall;
         EnemySpeed = newEnemySpeed;
@@ -57,7 +57,7 @@ public class EnemySpawnManager : MonoBehaviour
         Debug.Log("new spawn intervall: " + newIntervall);
 
 
-        InvokeRepeating(nameof(SpawnEnemyPrefab), 1f, spawnIntervall);
+        InvokeRepeating(nameof(SpawnEnemyPrefab), waitBeforeSpawn, spawnIntervall);
     }
 
 }
