@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Collision : MonoBehaviour
@@ -26,26 +27,26 @@ public class Collision : MonoBehaviour
 
             
             if(CompareColor(thisColor, enemyColor) || GameManager.Instance.isRainbowEffectActivated) {
-                Score(enemy);
+                Score();
             } else
             {
-                GameOver();
+                DecreaseLife();          
             }
+            Destroy(enemy);
         }
     }
 
-    private void Score(GameObject toDestroy)
+    private void Score()
     {
         // calla score method in game Manager to handle UI, maybe a UI handler or so
         GameManager.Instance.IncreaseScoreByOne();
-        Destroy(toDestroy);
     }
 
-    private void GameOver()
+    private void DecreaseLife()
     {
-        // call game over in Game Manager or so
-        //Debug.Log("Game Over");
+        GameManager.Instance.DecreasePlayerLife();
 
-        GameManager.Instance.OnGameOver();
     }
+
+
 }
