@@ -17,8 +17,6 @@ public class Shake : MonoBehaviour
         {
             originalPosition = transform.position;
 
-            Debug.Log("SHAKING!");
-
             StartCoroutine(ShakeCo());
         }
     }

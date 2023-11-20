@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
         InvokeRepeating(nameof(CreateNewSpecialEffect), waitForFirstSpecialEffectSpawn, effectSpawnEffectIntervall);
 
 
-        enemySpawnManager.StartSpawn(enemySpawnStartIntervall, enemyMoveSpeed);
+        enemySpawnManager.StartSpawn(enemySpawnStartIntervall, 0,enemyMoveSpeed);
 
 
         ApplySettings();
@@ -223,7 +223,7 @@ public class GameManager : MonoBehaviour
 
         enemyMoveSpeed *= enemyMoveSpeedMultiplier;
 
-        enemySpawnManager.StartSpawn(enemySpawnManager.spawnIntervall, enemyMoveSpeed);
+        enemySpawnManager.StartSpawn(enemySpawnManager.spawnIntervall, 2,enemyMoveSpeed);
     }
 
     public void IncreaseScoreByOne()
