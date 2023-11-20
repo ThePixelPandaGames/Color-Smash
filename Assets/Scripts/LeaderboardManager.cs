@@ -7,14 +7,26 @@ public class LeaderboardManager : MonoBehaviour
     public TextMeshProUGUI timeValue;
     public TextMeshProUGUI totalValue;
 
+
     // Start is called before the first frame update
     void Start()
     {
-        Settings current = SettingsManager.currentSettings;
+        UpdateHighScoreUI();
+    }
 
-        scoreValue.text = current.score.ToString();
-        timeValue.text = current.time.ToString();
-        totalValue.text = current.ratio.ToString(); 
+    private void UpdateHighScoreUI()
+    {
+        scoreValue.text = SettingsManager.currentSettings.score.ToString();
+        timeValue.text = SettingsManager.currentSettings.time.ToString();
+        totalValue.text = SettingsManager.currentSettings.ratio.ToString();
+    }
+
+
+    public void DeleteHighScore()
+    {
+        SettingsManager.DeleteHighScore();
+
+        UpdateHighScoreUI();
     }
 
 }
