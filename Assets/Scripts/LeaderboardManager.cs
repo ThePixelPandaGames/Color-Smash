@@ -7,6 +7,8 @@ public class LeaderboardManager : MonoBehaviour
     public TextMeshProUGUI timeValue;
     public TextMeshProUGUI totalValue;
 
+    public GameObject successfullMesage;
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,8 @@ public class LeaderboardManager : MonoBehaviour
         SettingsManager.DeleteHighScore();
 
         UpdateHighScoreUI();
+
+        successfullMesage.gameObject.SetActive(true);
     }
 
 }

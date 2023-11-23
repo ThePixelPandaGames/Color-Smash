@@ -10,6 +10,9 @@ public class OnStartSettingsInit : MonoBehaviour
     public Slider SFX_slider;
     public Slider rotationSensitivity_slider;
 
+    public GameObject successfullMesage;
+
+
     void Start()
     {
         UpdateSettingsInfoUI();
@@ -34,5 +37,7 @@ public class OnStartSettingsInit : MonoBehaviour
         newSettings.rotationSensitivity = rotationSensitivity_slider.value;
 
         SettingsManager.SaveSettings(newSettings);
+
+        successfullMesage.gameObject.SetActive(true);
     }
 }
