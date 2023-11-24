@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4405815039268818018}
   - component: {fileID: 7442716636185886538}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Color Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,14 +57,14 @@ MonoBehaviour:
   wheelBubbles: []
   rotSpeedMultiplier: 1
   Colors:
-  - {r: 0.41509432, g: 0.17426129, b: 0.17426129, a: 1}
-  - {r: 0.8113208, g: 0.5588822, b: 0.2028302, a: 1}
-  - {r: 0.22294413, g: 0.25363928, b: 0.2830189, a: 1}
-  - {r: 0.033018887, g: 0.9262847, b: 1, a: 1}
-  - {r: 0.07155571, g: 0.2264151, b: 0.10969961, a: 1}
-  - {r: 0.5826482, g: 0.8207547, b: 0.21293166, a: 1}
-  - {r: 0.5484603, g: 0.8018868, b: 0.55547494, a: 1}
-  - {r: 1, g: 0.20881328, b: 0, a: 1}
+  - {r: 0.79607844, g: 0.42352942, b: 0.9019608, a: 1}
+  - {r: 0.21960784, g: 0.7137255, b: 1, a: 1}
+  - {r: 1, g: 0.87058824, b: 0.34901962, a: 1}
+  - {r: 0.8, g: 0.2, b: 0.2, a: 1}
+  - {r: 0.32156864, g: 0.44313726, b: 1, a: 1}
+  - {r: 1, g: 0.5686275, b: 0.3019608, a: 1}
+  - {r: 0.49411765, g: 0.8509804, b: 0.34117648, a: 1}
+  - {r: 1, g: 0.34117648, b: 0.34117648, a: 1}
 --- !u!1001 &248932004030432421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74,12 +74,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 4405815039268818018}
     m_Modifications:
     - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.75
+      value: -0.66
       objectReference: {fileID: 0}
     - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.75
+      value: 0.66
       objectReference: {fileID: 0}
     - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -113,6 +125,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2771465104252290114, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bdc37d41951808844b98b2a347c8eddb, type: 3}
+    - target: {fileID: 2771465104252290114, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277887386438061576, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4277887386438061576, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -120,6 +144,10 @@ PrefabInstance:
     - target: {fileID: 5177937168816903726, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_Name
       value: Wheel Bubble (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177937168816903726, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -140,6 +168,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 4405815039268818018}
     m_Modifications:
     - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1
       objectReference: {fileID: 0}
@@ -179,6 +219,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2771465104252290114, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bdc37d41951808844b98b2a347c8eddb, type: 3}
+    - target: {fileID: 2771465104252290114, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277887386438061576, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4277887386438061576, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -186,6 +238,10 @@ PrefabInstance:
     - target: {fileID: 5177937168816903726, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_Name
       value: Wheel Bubble (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177937168816903726, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -206,12 +262,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 4405815039268818018}
     m_Modifications:
     - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.75
+      value: 0.66
       objectReference: {fileID: 0}
     - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.75
+      value: 0.66
       objectReference: {fileID: 0}
     - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -245,6 +313,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2771465104252290114, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bdc37d41951808844b98b2a347c8eddb, type: 3}
+    - target: {fileID: 2771465104252290114, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277887386438061576, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4277887386438061576, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -252,6 +332,10 @@ PrefabInstance:
     - target: {fileID: 5177937168816903726, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_Name
       value: Wheel Bubble (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177937168816903726, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -272,6 +356,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 4405815039268818018}
     m_Modifications:
     - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -311,6 +407,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2771465104252290114, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bdc37d41951808844b98b2a347c8eddb, type: 3}
+    - target: {fileID: 2771465104252290114, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277887386438061576, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4277887386438061576, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -318,6 +426,10 @@ PrefabInstance:
     - target: {fileID: 5177937168816903726, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_Name
       value: Wheel Bubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177937168816903726, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -338,12 +450,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 4405815039268818018}
     m_Modifications:
     - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.75
+      value: 0.66
       objectReference: {fileID: 0}
     - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.75
+      value: -0.66
       objectReference: {fileID: 0}
     - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -377,6 +501,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2771465104252290114, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bdc37d41951808844b98b2a347c8eddb, type: 3}
+    - target: {fileID: 2771465104252290114, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277887386438061576, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4277887386438061576, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -384,6 +520,10 @@ PrefabInstance:
     - target: {fileID: 5177937168816903726, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_Name
       value: Wheel Bubble (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177937168816903726, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -404,12 +544,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 4405815039268818018}
     m_Modifications:
     - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.75
+      value: -0.66
       objectReference: {fileID: 0}
     - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.75
+      value: -0.66
       objectReference: {fileID: 0}
     - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -443,6 +595,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2771465104252290114, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bdc37d41951808844b98b2a347c8eddb, type: 3}
+    - target: {fileID: 2771465104252290114, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277887386438061576, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4277887386438061576, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -450,6 +614,10 @@ PrefabInstance:
     - target: {fileID: 5177937168816903726, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_Name
       value: Wheel Bubble (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177937168816903726, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -469,6 +637,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4405815039268818018}
     m_Modifications:
+    - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -509,6 +689,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2771465104252290114, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bdc37d41951808844b98b2a347c8eddb, type: 3}
+    - target: {fileID: 2771465104252290114, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_Color.b
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771465104252290114, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_Color.g
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771465104252290114, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771465104252290114, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277887386438061576, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4277887386438061576, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -516,6 +720,10 @@ PrefabInstance:
     - target: {fileID: 5177937168816903726, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_Name
       value: Wheel Bubble (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177937168816903726, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -535,6 +743,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4405815039268818018}
     m_Modifications:
+    - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 1131120922398330287, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1
@@ -575,6 +795,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2771465104252290114, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bdc37d41951808844b98b2a347c8eddb, type: 3}
+    - target: {fileID: 2771465104252290114, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4277887386438061576, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4277887386438061576, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -582,6 +814,10 @@ PrefabInstance:
     - target: {fileID: 5177937168816903726, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
       propertyPath: m_Name
       value: Wheel Bubble (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177937168816903726, guid: 1fa725992161bf848a8571d05c1dcf43, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
