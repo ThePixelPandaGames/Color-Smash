@@ -377,15 +377,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 62dfb20e8f0c24843a57a160f29682f6, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3, y: 2.89}
+  m_Size: {x: 3, y: 3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &493888706
@@ -1932,7 +1932,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c06cc714fae538b45b7e7d10f892b11d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 77043649f62ed8d479e71ce9db1021ec, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2535,9 +2535,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 580f5bb58bffefe4a8739e4f95a44fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slowDownTimeImage: {fileID: 21300000, guid: 021018055da3a2049b71d8351103e26e, type: 3}
+  slowDownTimeImage: {fileID: 21300000, guid: e0d4e6ff896d7d045a68d17f555e08a1, type: 3}
   rainbowImage: {fileID: 21300000, guid: 62dfb20e8f0c24843a57a160f29682f6, type: 3}
-  destroyImage: {fileID: 21300000, guid: d77a9d87b84024746b5626452fc2562f, type: 3}
+  destroyImage: {fileID: 21300000, guid: a6a4096214dc95b4992c234f53f68bf3, type: 3}
   effectImage: {fileID: 0}
 --- !u!114 &1647680354
 MonoBehaviour:
