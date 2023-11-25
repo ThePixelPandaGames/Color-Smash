@@ -2977,7 +2977,7 @@ PrefabInstance:
     - target: {fileID: 7953555397729446203, guid: 00c8d1da53482c540bc6b0859af6aab5, type: 3}
       propertyPath: buttonSound
       value: 
-      objectReference: {fileID: 8300000, guid: 1d5ce453b2e889a4a9561223c94b8104, type: 3}
+      objectReference: {fileID: 8300000, guid: 15c65747302a6af4a909defc94132cbf, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

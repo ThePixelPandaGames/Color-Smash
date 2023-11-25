@@ -302,18 +302,26 @@ PrefabInstance:
     - target: {fileID: 6788207044186599667, guid: 7cf84e13f2264cc4c9dfb744025912e2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 298251386}
+      objectReference: {fileID: 240439779}
     - target: {fileID: 6788207044186599667, guid: 7cf84e13f2264cc4c9dfb744025912e2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6788207044186599667, guid: 7cf84e13f2264cc4c9dfb744025912e2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SaveSettings
       objectReference: {fileID: 0}
     - target: {fileID: 6788207044186599667, guid: 7cf84e13f2264cc4c9dfb744025912e2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayButtonSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 6788207044186599667, guid: 7cf84e13f2264cc4c9dfb744025912e2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: OnStartSettingsInit, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6788207044186599667, guid: 7cf84e13f2264cc4c9dfb744025912e2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ButtonSound, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6788207044186599667, guid: 7cf84e13f2264cc4c9dfb744025912e2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -324,6 +332,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cf84e13f2264cc4c9dfb744025912e2, type: 3}
+--- !u!114 &240439779 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 709127729472999621, guid: 7cf84e13f2264cc4c9dfb744025912e2, type: 3}
+  m_PrefabInstance: {fileID: 240439778}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 674f9e71cd0902f469a2c7f0b96c5329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &298251385
 GameObject:
   m_ObjectHideFlags: 0
