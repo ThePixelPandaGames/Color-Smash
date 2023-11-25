@@ -3,11 +3,15 @@ using UnityEngine;
 public class MainMenuManager : MonoBehaviour
 {
     MusicManager musicManager;
+    public Animator logoRotationAnimator;
     void Start()
     {
         SettingsManager.LoadSettings();
 
-        musicManager = GameObject.Find("MusicManager").GetComponent<MusicManager>();    
+        musicManager = GameObject.Find("MusicManager").GetComponent<MusicManager>();
+
+        logoRotationAnimator.SetTrigger("startSpin");
+
 
         ApplySettings();
     }
@@ -20,5 +24,10 @@ public class MainMenuManager : MonoBehaviour
         }
     }
 
-  
+    private void OnDestroy()
+    {
+        logoRotationAnimator.SetTrigger("stopSpin");
+    }
+
+
 }
