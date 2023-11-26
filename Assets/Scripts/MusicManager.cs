@@ -65,4 +65,5 @@ public class MusicManager : MonoBehaviour
     {
         return musicSource.isPlaying;
     }
+
 }
