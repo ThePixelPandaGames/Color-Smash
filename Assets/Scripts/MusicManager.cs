@@ -31,7 +31,7 @@ public class MusicManager : MonoBehaviour
  
     public void PlayButtonSound()
     {
-        musicSource.PlayOneShot(buttonSound);
+        musicSource.PlayOneShot(buttonSound, 2.0f);
     }
 
     public void StartMenuMusic()
@@ -65,4 +65,5 @@ public class MusicManager : MonoBehaviour
     {
         return musicSource.isPlaying;
     }
+
 }

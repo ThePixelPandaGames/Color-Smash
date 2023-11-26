@@ -19,6 +19,8 @@ public class SoundManager : MonoBehaviour
     public AudioClip sfx_se_fire;
     public AudioClip sfx_se_hourglass;
 
+    public AudioClip sfx_se_star_during;
+
 
     private void Awake()
     {
@@ -31,6 +33,17 @@ public class SoundManager : MonoBehaviour
     {
         AudioClip randomClip = sfx_score[ Random.Range(0, sfx_score.Length)];
         audioSource.PlayOneShot(randomClip);
+    }
+
+    public void ShotDuringStarSFX()
+    {
+        audioSource.PlayOneShot(sfx_se_star_during);
+    }
+
+    public void StopDuringStarSFX()
+    {
+        //audioSource.Stop();
+        FadeOut();
     }
 
     public void ShotLeveUpSFX()
@@ -63,6 +76,26 @@ public class SoundManager : MonoBehaviour
     {
         Debug.Log("audioSource: " + audioSource);
         audioSource.volume = volumeValue;
+    }
+
+    private void FadeOut()
+    {
+        StartCoroutine(FadeOutCo(audioSource, 0.75f, 0f));
+    }
+
+    IEnumerator FadeOutCo(AudioSource audioSource, float duration, float targetVolume)
+    {
+        float currentTime = 0;
+        float start = audioSource.volume;
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            audioSource.volume = Mathf.Lerp(start, targetVolume, currentTime / duration);
+            yield return null;
+        }
+        audioSource.Stop();
+        audioSource.volume = 1f;
+        yield break;
     }
 
 }

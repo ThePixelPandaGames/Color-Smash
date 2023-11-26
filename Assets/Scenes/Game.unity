@@ -2621,7 +2621,7 @@ MonoBehaviour:
   sfx_levelUp: {fileID: 8300000, guid: 74750a205ce43634fad6b0cf3522589a, type: 3}
   sfx_gameOver: {fileID: 8300000, guid: c8b1d2a6d011c784081cc9e718489ff1, type: 3}
   sfx_se_star: {fileID: 8300000, guid: 989ada1b1773aee44986031d89697e07, type: 3}
-  sfx_se_fire: {fileID: 8300000, guid: 1b4967aaa7c888c4dac2ee0445c22b94, type: 3}
+  sfx_se_fire: {fileID: 8300000, guid: f01c623f724825e44a923d1ae50256f2, type: 3}
   sfx_se_hourglass: {fileID: 8300000, guid: 08ac55ae6e8b72e4bb4791750d36a431, type: 3}
 --- !u!82 &1647680360
 AudioSource:

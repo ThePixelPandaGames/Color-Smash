@@ -36,6 +36,23 @@ public class OnStartSettingsInit : MonoBehaviour
         newSettings.SFXVolume = SFX_slider.value;
         newSettings.rotationSensitivity = rotationSensitivity_slider.value;
 
+        if(newSettings.musicVolume > 0)
+        {
+            newSettings.isMusicOn = 1;
+        } else
+        {
+            newSettings.isMusicOn = 0;
+        }
+
+        if (newSettings.SFXVolume > 0)
+        {
+            newSettings.isSFXOn = 1;
+        }
+        else
+        {
+            newSettings.isSFXOn = 0;
+        }
+
         SettingsManager.SaveSettings(newSettings);
 
         successfullMesage.gameObject.SetActive(true);

@@ -297,6 +297,10 @@ public class GameManager : MonoBehaviour
         DisableEffectPossibility();
         animManager.StartEffectAnim();
         soundManager.ShotStarSFX();
+        soundManager.ShotDuringStarSFX();
+        musicManager.musicSource.Pause();
+
+
 
 
 
@@ -377,6 +381,8 @@ public class GameManager : MonoBehaviour
         animManager.StopPulseAnim();
         animManager.StopEffectAnim();
         effectRenderer.sprite = null;
+        soundManager.StopDuringStarSFX();
+        musicManager.musicSource.Play();
 
     }
 

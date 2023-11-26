@@ -10,6 +10,9 @@ public class ButtonSound : MonoBehaviour
 
     public void PlayButtonSound()
     {
-        musicManager.PlayButtonSound();
+        if (SettingsManager.currentSettings.isSFXOn == 1)
+        {
+            musicManager.PlayButtonSound();
+        }
     }
 }
