@@ -182,7 +182,6 @@ public class GameManager : MonoBehaviour
         {
             soundManager.ShotGameOverSFX();
         }
-        //musicManager.StopBgMusic();
 
         SaveHighScoreIfApplicable();
 
@@ -326,9 +325,13 @@ public class GameManager : MonoBehaviour
     {
         DisableEffectPossibility();
         animManager.StartEffectAnim();
-        soundManager.ShotStarSFX();
-        soundManager.ShotDuringStarSFX();
-        musicManager.musicSource.Pause();
+
+        if (SettingsManager.currentSettings.isSFXOn == 1)
+        {
+            soundManager.ShotStarSFX();
+            soundManager.ShotDuringStarSFX();
+            musicManager.musicSource.Pause();
+        }
 
 
 
@@ -411,7 +414,11 @@ public class GameManager : MonoBehaviour
         animManager.StopPulseAnim();
         animManager.StopEffectAnim();
         effectRenderer.sprite = null;
-        soundManager.StopDuringStarSFX();
+
+        if (SettingsManager.currentSettings.isSFXOn == 1)
+        {
+            soundManager.StopDuringStarSFX();
+        }
         musicManager.musicSource.Play();
 
     }
