@@ -117,6 +117,7 @@ public class GameManager : MonoBehaviour
     public void DecreasePlayerLife()
     {
         playerLife.RemovePlayerLife();
+        soundManager.ShotLoseLifeSFX();
         if (playerLife.CurrentPlayerLife == 0)
         {
             OnGameOver();
@@ -188,11 +189,13 @@ public class GameManager : MonoBehaviour
         gameOverLogic.ShowGameOverUI();
 
         musicManager.ResetAudioSpeed();
+        soundManager.StopDuringStarSFX();
+
 
         if (SettingsManager.currentSettings.isSFXOn == 1)
         {
             soundManager.ShotGameOverSFX();
-        }
+    }
 
         SaveHighScoreIfApplicable();
 
