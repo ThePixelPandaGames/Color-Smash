@@ -20,6 +20,8 @@ public class TimeManager : MonoBehaviour
 
     public void ResumeTimer()
     {
+        Time.timeScale = 1;
+        timeIsTicking = true;
         StartCoroutine(StartTimer());
     }
 

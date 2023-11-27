@@ -17,9 +17,12 @@ public class GameManager : MonoBehaviour
     private SoundManager soundManager;
     private MusicManager musicManager;
     private PlayerLife playerLife;
+    private AdDisplay adDisplay;
 
     private Camera camera;
     private Shake cameraShake;
+
+    private bool alreadyUsedAdReward;
 
 
 
@@ -78,6 +81,7 @@ public class GameManager : MonoBehaviour
         soundManager = GetComponent<SoundManager>();
         musicManager = GameObject.FindGameObjectWithTag("Music Manager").GetComponent<MusicManager>();
         playerLife = GetComponent<PlayerLife>();
+        adDisplay = GameObject.Find("AdDisplayObject").GetComponent<AdDisplay>();
 
         camera = Camera.main;
         cameraShake = camera.GetComponent<Shake>();
@@ -155,6 +159,8 @@ public class GameManager : MonoBehaviour
 
         // color wheel
         colorWheel.rotSpeedMultiplier = SettingsManager.currentSettings.rotationSensitivity;
+
+        alreadyUsedAdReward = false;
     }
 
 
@@ -180,6 +186,11 @@ public class GameManager : MonoBehaviour
         foreach (GameObject enemy in enemies)
         {
             Destroy(enemy);
+        }
+
+        if (!alreadyUsedAdReward)
+        {
+            adDisplay.LoadAd();
         }
     }
 
@@ -209,6 +220,17 @@ public class GameManager : MonoBehaviour
         {
             HideHighScoreUI();
         }
+    }
+
+    public void GrantReward()
+    {
+        
+            isGameOver = false;
+            playerLife.AddPlayerLife();
+            timeManager.ResumeTimer();
+            gameOverLogic.HideGameOverUI();
+            alreadyUsedAdReward = true;
+        
     }
 
     private void HideHighScoreUI()
