@@ -418,8 +418,9 @@ public class GameManager : MonoBehaviour
         if (SettingsManager.currentSettings.isSFXOn == 1)
         {
             soundManager.StopDuringStarSFX();
+            musicManager.musicSource.Play();
+
         }
-        musicManager.musicSource.Play();
 
     }
 
