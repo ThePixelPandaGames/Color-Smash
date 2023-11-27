@@ -1,3 +1,6 @@
+using System;
+using System.Text;
+using System.Xml;
 using TMPro;
 using UnityEngine;
 
@@ -20,7 +23,7 @@ public class LeaderboardManager : MonoBehaviour
     {
         scoreValue.text = SettingsManager.currentSettings.score.ToString();
         timeValue.text = SettingsManager.currentSettings.time.ToString();
-        totalValue.text = SettingsManager.currentSettings.ratio.ToString();
+        totalValue.text = SettingsManager.currentSettings.ratio.ToString().Substring(0, 5);
     }
 
 
@@ -28,7 +31,9 @@ public class LeaderboardManager : MonoBehaviour
     {
         SettingsManager.DeleteHighScore();
 
-        UpdateHighScoreUI();
+        scoreValue.text = "0";
+        timeValue.text = "0";
+        totalValue.text = "0";
 
         successfullMesage.gameObject.SetActive(true);
     }

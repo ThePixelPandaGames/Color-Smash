@@ -435,7 +435,7 @@ GameObject:
   - component: {fileID: 504521545}
   - component: {fileID: 504521546}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: score and time parent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1095,7 +1095,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: new highscore
+  m_text: New Highscore
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cc47d6a83074263449ac7834b02312b5, type: 2}
   m_sharedMaterial: {fileID: 3247234193542751621, guid: cc47d6a83074263449ac7834b02312b5, type: 2}
@@ -1128,7 +1128,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 17
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -2730,6 +2730,7 @@ MonoBehaviour:
   isRainbowEffectActivated: 0
   isGameOver: 0
   highScoreUI: {fileID: 1965737176}
+  highscoreText: {fileID: 2110654126}
 --- !u!4 &1647680349
 Transform:
   m_ObjectHideFlags: 0
@@ -3433,7 +3434,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1965737177
 RectTransform:
   m_ObjectHideFlags: 0
