@@ -177,8 +177,12 @@ public class GameManager : MonoBehaviour
         gameOverLogic.ShowGameOverUI();
 
         musicManager.ResetAudioSpeed();
-        soundManager.ShotGameOverSFX();
-        musicManager.StopBgMusic();
+
+        if (SettingsManager.currentSettings.isSFXOn == 1)
+        {
+            soundManager.ShotGameOverSFX();
+        }
+        //musicManager.StopBgMusic();
 
         SaveHighScoreIfApplicable();
 
