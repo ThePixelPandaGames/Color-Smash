@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     private MusicManager musicManager;
     private PlayerLife playerLife;
     private AdDisplay adDisplay;
+    public Transform centerBubble;
 
     private Camera camera;
     private Shake cameraShake;
@@ -104,6 +105,15 @@ public class GameManager : MonoBehaviour
 
     }
 
+
+    private void StartInvokes()
+    {
+        InvokeRepeating(nameof(LevelUp), waitForFirstLevelUp, levelUpIntervall);
+
+
+        InvokeRepeating(nameof(CreateNewSpecialEffect), waitForFirstSpecialEffectSpawn, effectSpawnEffectIntervall);
+    }
+
     public void DecreasePlayerLife()
     {
         playerLife.RemovePlayerLife();
@@ -170,6 +180,7 @@ public class GameManager : MonoBehaviour
         isGameOver = true;
         CancelInvoke();
         StopAllCoroutines();
+       
         timeManager.timeIsTicking = false;
         Time.timeScale = 0;
 
@@ -195,6 +206,7 @@ public class GameManager : MonoBehaviour
         if (!alreadyUsedAdReward)
         {
             adDisplay.LoadAd();
+            centerBubble.rotation = Quaternion.identity;
         }
     }
 
@@ -234,7 +246,14 @@ public class GameManager : MonoBehaviour
             timeManager.ResumeTimer();
             gameOverLogic.HideGameOverUI();
             alreadyUsedAdReward = true;
-        
+        if (!isEffectSlotFree)
+        {
+            isEffectSlotFree = true;
+            effectRenderer.sprite = null;
+            availableSpecialEffect = null;
+        }
+        StartInvokes();
+
     }
 
     private void HideHighScoreUI()

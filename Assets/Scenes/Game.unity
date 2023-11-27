@@ -2713,6 +2713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b139c0f28b7ebd408d386bd68f99b08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  centerBubble: {fileID: 996250390}
   enemyMoveSpeed: 0.75
   enemyMoveSpeedMultiplier: 1.2
   enemySpawnStartIntervall: 6
