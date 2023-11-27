@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public bool isGameOver = false;
 
     public GameObject highScoreUI;
+    public TextMeshProUGUI highscoreText;
 
 
 
@@ -242,7 +243,10 @@ public class GameManager : MonoBehaviour
     {
         // display
         highScoreUI.SetActive(true);
-        highScoreUI.GetComponent<TextMeshProUGUI>().text = "New Highscore:\nscore:" + score + " in \ntime:" + time;
+        int min = time / 60;
+        int sec = time % 60;
+        highscoreText.text = $"{score} score\nin\n{min}min & {sec}secs";
+        
     }
 
     public void CreateNewSpecialEffect()
