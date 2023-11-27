@@ -18,6 +18,7 @@ public class MainMenuManager : MonoBehaviour
 
     private void ApplySettings()
     {
+        Time.timeScale = 1;
         if(SettingsManager.currentSettings.isMusicOn == 1) 
             musicManager.SetVolumeTo(SettingsManager.currentSettings.musicVolume); 
         else
