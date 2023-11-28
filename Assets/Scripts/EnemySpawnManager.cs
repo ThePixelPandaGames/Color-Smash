@@ -53,10 +53,6 @@ public class EnemySpawnManager : MonoBehaviour
     {
         spawnIntervall = newIntervall;
         EnemySpeed = newEnemySpeed;
-        Debug.Log("new enemy speed: " + newEnemySpeed);
-        Debug.Log("new spawn intervall: " + newIntervall);
-
-
         InvokeRepeating(nameof(SpawnEnemyPrefab), waitBeforeSpawn, spawnIntervall);
     }
 

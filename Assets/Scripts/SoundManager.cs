@@ -79,7 +79,6 @@ public class SoundManager : MonoBehaviour
 
     public void SetVolumeTo(float volumeValue)
     {
-        Debug.Log("audioSource: " + audioSource);
         audioSource.volume = volumeValue;
     }
 

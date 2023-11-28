@@ -1,4 +1,3 @@
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,7 +24,6 @@ public class PauseManager : MonoBehaviour
 
     public void ToggleMusic()
     {
-        Debug.Log("changing music");
         Settings newSettings = SettingsManager.currentSettings;
 
         if (musicToggle.isOn )
@@ -92,6 +90,7 @@ public class PauseManager : MonoBehaviour
         GameManager.Instance.isPaused = false;
         GetComponent<TimeManager>().ResumeTimer();
         HidePauseUI();
+
         colorWheel.SetActive(true);
         centerBubble.SetActive(true);
 

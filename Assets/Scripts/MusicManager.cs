@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MusicManager : MonoBehaviour
@@ -11,7 +9,6 @@ public class MusicManager : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("START MUSIC MANAGER");
         musicSource = GetComponent<AudioSource>();  
         musicSource.clip = menuMusic;
         musicSource.loop = true;
