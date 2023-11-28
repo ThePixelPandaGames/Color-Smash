@@ -295,11 +295,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cab980be3df912f409a52d3296e63fdc, type: 3}
---- !u!95 &252756852 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2772418712532297430, guid: cab980be3df912f409a52d3296e63fdc, type: 3}
-  m_PrefabInstance: {fileID: 252756851}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &405395275
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1777,7 +1772,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 80e7595dad345244e94c35305832659b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e95b01cca6e783e46baa86737f7d7c66, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1797,7 +1792,7 @@ RectTransform:
   m_GameObject: {fileID: 996250386}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.049999997, y: 0.049999997, z: 0.049999997}
+  m_LocalScale: {x: 0.17, y: 0.17, z: 0.17}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -2550,11 +2545,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cab980be3df912f409a52d3296e63fdc, type: 3}
---- !u!95 &1525351630 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2772418712532297430, guid: cab980be3df912f409a52d3296e63fdc, type: 3}
-  m_PrefabInstance: {fileID: 1525351629}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1587291122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3039,9 +3029,6 @@ MonoBehaviour:
   - {fileID: 1423354327}
   - {fileID: 1353361900}
   MAX_PLAYER_LIFE: 3
-  playerLifeAnimator0: {fileID: 252756852}
-  playerLifeAnimator1: {fileID: 1525351630}
-  playerLifeAnimator2: {fileID: 2202353137430207989}
 --- !u!1 &1736053278 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3934497760662058602, guid: cab980be3df912f409a52d3296e63fdc, type: 3}
@@ -4278,11 +4265,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cab980be3df912f409a52d3296e63fdc, type: 3}
---- !u!95 &2202353137430207989 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2772418712532297430, guid: cab980be3df912f409a52d3296e63fdc, type: 3}
-  m_PrefabInstance: {fileID: 2202353137430207988}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4147464867485221882
 PrefabInstance:
   m_ObjectHideFlags: 0
