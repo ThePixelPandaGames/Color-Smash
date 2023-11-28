@@ -118,7 +118,10 @@ public class GameManager : MonoBehaviour
     public void DecreasePlayerLife()
     {
         playerLife.RemovePlayerLife();
-        soundManager.ShotLoseLifeSFX();
+        if (SettingsManager.currentSettings.isSFXOn == 1)
+        {
+            soundManager.ShotLoseLifeSFX();
+        }
         if (playerLife.CurrentPlayerLife == 0)
         {
             OnGameOver();

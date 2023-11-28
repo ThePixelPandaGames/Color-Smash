@@ -61,6 +61,7 @@ public class PlayerLife : MonoBehaviour
     {
         if (CurrentPlayerLife > 0)
         {
+
             CurrentPlayerLife--;
             GameObject deletedPlayerLifePosition = (GameObject)playerLifePositionStack.Pop();
             deletedPlayerLifePosition.GetComponent<SpriteRenderer>().sprite = null;
