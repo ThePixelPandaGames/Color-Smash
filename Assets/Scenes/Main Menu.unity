@@ -642,7 +642,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5192530980766518298, guid: 6ae14c4f00f377642b43bffa20b3bdbf, type: 3}
       propertyPath: m_Name
-      value: background 1
+      value: background
       objectReference: {fileID: 0}
     - target: {fileID: 7568364922387020112, guid: 6ae14c4f00f377642b43bffa20b3bdbf, type: 3}
       propertyPath: m_Pivot.x
