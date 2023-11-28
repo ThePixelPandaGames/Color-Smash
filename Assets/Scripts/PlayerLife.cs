@@ -13,12 +13,13 @@ public class PlayerLife : MonoBehaviour
 
     private Stack playerLifePositionStack;
 
+
     void Start()
     {
         playerLifePositionStack = new Stack(3);
-        playerLifePositionStack.Push(playerLifePosition[0]);
-        playerLifePositionStack.Push(playerLifePosition[1]);
         playerLifePositionStack.Push(playerLifePosition[2]);
+        playerLifePositionStack.Push(playerLifePosition[1]);
+        playerLifePositionStack.Push(playerLifePosition[0]);
 
         CurrentPlayerLife = MAX_PLAYER_LIFE;
     }
@@ -34,7 +35,7 @@ public class PlayerLife : MonoBehaviour
                 case 1:
                     {
                         playerLifePositionStack.Push(playerLifePosition[0]);
-                        playerLifePosition[0].GetComponent<SpriteRenderer>().sprite = playerLifeSprite;
+                        playerLifePosition[2].GetComponent<SpriteRenderer>().sprite = playerLifeSprite;
                     }
                     break;
                 case 2:
@@ -47,7 +48,7 @@ public class PlayerLife : MonoBehaviour
                 case 3:
                     {
                         playerLifePositionStack.Push(playerLifePosition[2]);
-                        playerLifePosition[2].GetComponent<SpriteRenderer>().sprite = playerLifeSprite;
+                        playerLifePosition[0].GetComponent<SpriteRenderer>().sprite = playerLifeSprite;
 
                     }
                     break;
@@ -60,6 +61,7 @@ public class PlayerLife : MonoBehaviour
     {
         if (CurrentPlayerLife > 0)
         {
+
             CurrentPlayerLife--;
             GameObject deletedPlayerLifePosition = (GameObject)playerLifePositionStack.Pop();
             deletedPlayerLifePosition.GetComponent<SpriteRenderer>().sprite = null;

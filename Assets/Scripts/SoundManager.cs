@@ -20,7 +20,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip sfx_se_hourglass;
 
     public AudioClip sfx_se_star_during;
-
+    public AudioClip sfx_lose_life;
 
     private void Awake()
     {
@@ -38,6 +38,11 @@ public class SoundManager : MonoBehaviour
     public void ShotDuringStarSFX()
     {
         audioSource.PlayOneShot(sfx_se_star_during);
+    }
+
+    public void ShotLoseLifeSFX()
+    {
+        audioSource.PlayOneShot(sfx_lose_life);
     }
 
     public void StopDuringStarSFX()
@@ -94,7 +99,7 @@ public class SoundManager : MonoBehaviour
             yield return null;
         }
         audioSource.Stop();
-        audioSource.volume = 1f;
+        audioSource.volume = SettingsManager.currentSettings.SFXVolume;
         yield break;
     }
 
