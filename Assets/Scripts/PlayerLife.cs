@@ -13,7 +13,6 @@ public class PlayerLife : MonoBehaviour
 
     private Stack playerLifePositionStack;
 
-    public Animator playerLifeAnimator;
 
     void Start()
     {
@@ -62,7 +61,6 @@ public class PlayerLife : MonoBehaviour
     {
         if (CurrentPlayerLife > 0)
         {
-            playerLifeAnimator.SetTrigger("loseLife");
             CurrentPlayerLife--;
             GameObject deletedPlayerLifePosition = (GameObject)playerLifePositionStack.Pop();
             deletedPlayerLifePosition.GetComponent<SpriteRenderer>().sprite = null;

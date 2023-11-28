@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
 
 
 
+
     // enemy spawn
     public float enemyMoveSpeed;
     public float enemyMoveSpeedMultiplier;
@@ -126,7 +127,7 @@ public class GameManager : MonoBehaviour
 
     private Color GetRandomColorFromColorArray(Color[] colors)
     {
-        return colors[Random.Range(0, colors.Length)];   
+        return colors[Random.Range(0, colors.Length)];
     }
 
 
@@ -134,13 +135,14 @@ public class GameManager : MonoBehaviour
     {
         Color[] colors = colorWheel.Colors;
         GameObject[] wheels = GameObject.FindGameObjectsWithTag("Wheel Bubble");
-        
-        
+
+
 
         while (isRainbowEffectActivated)
         {
-            foreach (GameObject wheel in wheels) { 
-                wheel.GetComponent<SpriteRenderer>().color = GetRandomColorFromColorArray(colors); 
+            foreach (GameObject wheel in wheels)
+            {
+                wheel.GetComponent<SpriteRenderer>().color = GetRandomColorFromColorArray(colors);
             }
 
             yield return new WaitForSecondsRealtime(0.1f);
@@ -181,7 +183,7 @@ public class GameManager : MonoBehaviour
         isGameOver = true;
         CancelInvoke();
         StopAllCoroutines();
-       
+
         timeManager.timeIsTicking = false;
         Time.timeScale = 0;
 
@@ -195,7 +197,7 @@ public class GameManager : MonoBehaviour
         if (SettingsManager.currentSettings.isSFXOn == 1)
         {
             soundManager.ShotGameOverSFX();
-    }
+        }
 
         SaveHighScoreIfApplicable();
 
@@ -211,6 +213,7 @@ public class GameManager : MonoBehaviour
             adDisplay.LoadAd();
             centerBubble.rotation = Quaternion.identity;
         }
+
     }
 
     private void SaveHighScoreIfApplicable()
@@ -243,12 +246,12 @@ public class GameManager : MonoBehaviour
 
     public void GrantReward()
     {
-        
-            isGameOver = false;
-            playerLife.AddPlayerLife();
-            timeManager.ResumeTimer();
-            gameOverLogic.HideGameOverUI();
-            alreadyUsedAdReward = true;
+
+        isGameOver = false;
+        playerLife.AddPlayerLife();
+        timeManager.ResumeTimer();
+        gameOverLogic.HideGameOverUI();
+        alreadyUsedAdReward = true;
         if (!isEffectSlotFree)
         {
             isEffectSlotFree = true;
@@ -256,7 +259,6 @@ public class GameManager : MonoBehaviour
             availableSpecialEffect = null;
         }
         StartInvokes();
-
     }
 
     private void HideHighScoreUI()
@@ -271,7 +273,7 @@ public class GameManager : MonoBehaviour
         int min = time / 60;
         int sec = time % 60;
         highscoreText.text = $"{score} score\nin\n{min}min & {sec}secs";
-        
+
     }
 
     public void CreateNewSpecialEffect()
