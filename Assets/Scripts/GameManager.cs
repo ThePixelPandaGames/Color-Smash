@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -225,19 +224,16 @@ public class GameManager : MonoBehaviour
 
         int secondsPast = timeManager.secondsPast;
         int score = scoreManager.score;
-        Debug.Log("Score: " + score);
-        Debug.Log("time: " + secondsPast
-            );
+   
+
 
         float newRatio = (float)score / (float)secondsPast;
 
-        Debug.Log("old ratio: " + ratio);
-        Debug.Log("new ratio: " + newRatio);
+
 
         if (newRatio > ratio)
 
         {
-            Debug.Log("is bigger");
             SettingsManager.SaveHighScore(score, secondsPast, newRatio);
             ShowHighScoreUI(score, secondsPast);
         }

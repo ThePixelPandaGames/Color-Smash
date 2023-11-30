@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DetectDoubleClick : MonoBehaviour
@@ -30,7 +28,6 @@ public class DetectDoubleClick : MonoBehaviour
                 if (currentTime - lastClickTime < doubleClickTimeThreshold)
                 {
                     // Double click detected
-                    //Debug.Log("Double Click!");
 
 
                     if (GameManager.Instance.availableSpecialEffect != null && !GameManager.Instance.isPaused)
