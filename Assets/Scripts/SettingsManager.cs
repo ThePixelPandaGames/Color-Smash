@@ -16,7 +16,7 @@ public static class SettingsManager
         currentSettings.ratio = PlayerPrefs.GetFloat("ratio");
         currentSettings.isMusicOn = PlayerPrefs.GetInt("isMusicOn");
         currentSettings.isSFXOn = PlayerPrefs.GetInt("isSFXOn");
-
+        currentSettings.firstSetup = PlayerPrefs.GetInt("firstSetup");
     }
 
 
@@ -27,7 +27,8 @@ public static class SettingsManager
         currentSettings.SFXVolume = newSettings.SFXVolume;
         currentSettings.rotationSensitivity = newSettings.rotationSensitivity;
         currentSettings.isMusicOn = newSettings.isMusicOn;
-        currentSettings.isSFXOn = newSettings.isSFXOn;  
+        currentSettings.isSFXOn = newSettings.isSFXOn;
+        currentSettings.firstSetup = newSettings.firstSetup;
 
         PlayerPrefs.SetString("playerName", newSettings.playerName);
         PlayerPrefs.SetFloat("musicVolume", newSettings.musicVolume);
@@ -35,6 +36,7 @@ public static class SettingsManager
         PlayerPrefs.SetInt("isSFXOn", newSettings.isSFXOn);
         PlayerPrefs.SetFloat("SFXVolume", newSettings.SFXVolume);
         PlayerPrefs.SetFloat("rotationSensitivity", newSettings.rotationSensitivity);
+        PlayerPrefs.SetInt("firstSetup", newSettings.firstSetup);
 
         LoadSettings();
     }
@@ -65,6 +67,20 @@ public static class SettingsManager
         currentSettings.ratio = 0;
     }
 
+    public static void SetupDefaultValues()
+    {
+        PlayerPrefs.SetFloat("musicVolume", 0.5f);
+        PlayerPrefs.SetFloat("SFXVolume", 0.5f);
+        PlayerPrefs.SetFloat("rotationSensitivity", 0.5f);
+
+        currentSettings.rotationSensitivity = 0.5f;
+        currentSettings.musicVolume = 0.5f;
+        currentSettings.SFXVolume = 0.5f;
+
+        currentSettings.firstSetup = 1;
+        PlayerPrefs.GetInt("firstSetup", currentSettings.firstSetup);
+    }
+
 }
 
 
@@ -72,7 +88,7 @@ public static class SettingsManager
 public class Settings
 {
     public Settings() { }
-
+    public int firstSetup;
     public string playerName;
     public float musicVolume;
     public float SFXVolume;

@@ -7,7 +7,11 @@ public class MainMenuManager : MonoBehaviour
     void Start()
     {
         SettingsManager.LoadSettings();
-
+        
+        if(SettingsManager.currentSettings.firstSetup != 1)
+        {
+            
+        }
         musicManager = GameObject.Find("MusicManager").GetComponent<MusicManager>();
 
         logoRotationAnimator.SetTrigger("startSpin");
@@ -24,6 +28,15 @@ public class MainMenuManager : MonoBehaviour
         else
         {
             musicManager.SetVolumeTo(0);
+        }
+
+        // check if it is the initial setup 
+        // if not: do nothing
+        // if so: set default values for music & sfx volume and rot speed
+
+        if (SettingsManager.currentSettings.firstSetup == 0)
+        {
+            SettingsManager.SetupDefaultValues();
         }
 
         
