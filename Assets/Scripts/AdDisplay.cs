@@ -11,7 +11,7 @@ public class AdDisplay : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowList
     public string adUnitIdIOS = "Rewarded_IOS";
     public string myAdUnitId;
     public bool adStarted;
-    private bool testMode = true;
+    private bool testMode = false;
     [SerializeField] Button _showAdButton;
 
 
